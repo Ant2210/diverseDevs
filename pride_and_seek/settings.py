@@ -12,8 +12,10 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 
+import os
 import sys
 import dj_database_url
+from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -121,13 +123,13 @@ WSGI_APPLICATION = 'pride_and_seek.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+
+# Load environment variables from .env file
+load_dotenv()
+
 DATABASES = {
-    'default': dj_database_url.config(default='postgres://dbebctcl:wVg5J2v94KUrh1Ob_KqVpLG5h4SPjFI6@mouse.db.elephantsql.com/dbebctcl')
+    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
 }
-
-if 'test' in sys.argv:
-    DATABASES['default']['ENGINE'] = 'django.db.backends.sqlite3'
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
