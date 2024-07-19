@@ -1,6 +1,18 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
+from django.contrib import messages
+from .forms import UserProfileForm
 
-# Create your views here.
+@login_required
 def profile(request):
-    """ A view to return the profile.html page """
-    return render(request, 'profiles/profile.html')
+    user_profile = request.user.userprofile
+    if request.method == 'POST':
+        form = UserProfileForm(request.POST, request.FILES, instance=user_profile)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Your profile has been updated successfully!')
+            return redirect('profile')
+    else:
+        form = UserProfileForm(instance=user_profile)
+    
+    return render(request, 'profiles/profile.html', {'form': form})
