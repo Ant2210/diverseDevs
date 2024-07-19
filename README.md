@@ -2,7 +2,7 @@
 
 # 🏳️‍🌈 Pride & Seek 🏳️‍🌈
 
-![Pride & Seek banner](assets/images/site-preview.webp)
+![Pride & Seek banner](static/images/hackathon-banner.jpg)
 
 Add screenshot of live site here...
 
