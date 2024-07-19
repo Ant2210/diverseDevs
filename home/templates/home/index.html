@@ -3,9 +3,12 @@
 {% block content %}
 
 
-<div>
-    <h1>This is the Home page</h1>
+<div class="bg">
+    <div class="d-flex justify-content-center align-items-center vh-100">
+        <div class="text-center">
+            <a href="{% url 'map' %}" class="btn btn-primary btn-lg btn-custom">Map</a>
+            <a href="{% url 'blog' %}" class="btn btn-success btn-lg btn-custom">Blog</a>
+        </div>
+    </div>
 </div>
-
-
 {% endblock %}
