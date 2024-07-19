@@ -1,0 +1,28 @@
+.navbar {
+  background: linear-gradient(to right, #014ca7, #9b2a78, #ff0092, #ff6801, #fdd900, #01ab48);
+  padding: 10px 20px;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+#nav-logo {
+  width: 7rem;
+}
+
+.navbar-toggler-icon {
+  filter: invert(100);
+}
+
+.navbar-toggler {
+  border: 2px #e7e7e7 solid;
+  color: #e7e7e7;
+}
+
+.navbar-toggler:focus {
+  border: 2px #e7e7e7 solid;
+}

@@ -31,13 +31,19 @@ SECRET_KEY = 'django-insecure-2oijn@i1n&k^&h0rm#a#5laou(@_y!4k+!6$(y1*^1a)&57*g2
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    ".gitpod.io", 
-    ".herokuapp.com"
+    ".gitpod.io",
+    ".herokuapp.com",
+    "localhost",
+    "127.0.0.1",
+    ".ws.codeinstitute-ide.net"
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     "https://*.gitpod.io",
-    "https://*.herokuapp.com"
+    "https://*.herokuapp.com",
+    "https://localhost",
+    "https://127.0.0.1",
+    "https://*.ws.codeinstitute-ide.net"
 ]
 
 # Application definition
@@ -172,3 +178,9 @@ STATICFILES_DIRS = [BASE_DIR / "static"]
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
+    }
+}
