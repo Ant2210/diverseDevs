@@ -1,4 +1,6 @@
 asgiref==3.8.1
+dj-database-url==2.2.0
 Django==5.0.7
 django-allauth==0.63.6
+psycopg2-binary==2.9.9
 sqlparse==0.5.1
