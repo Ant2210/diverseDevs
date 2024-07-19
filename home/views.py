@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 # Create your views here.
-from django.http import HttpResponse
 
 def index(request):
-    return HttpResponse("Hello World")
+    """ A view to return the index.html page """
+    return render(request, 'home/index.html')
