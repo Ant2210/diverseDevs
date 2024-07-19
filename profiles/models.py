@@ -30,4 +30,4 @@ class UserProfile(models.Model):
     def save(self, *args, **kwargs):
         if self.gender != 'other':
             self.custom_gender = ''
-        super(Profile, self).save(*args, **kwargs)
+        super(UserProfile, self).save(*args, **kwargs)
