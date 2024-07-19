@@ -1,7 +1,9 @@
 asgiref==3.8.1
+cloudinary==1.40.0
 dj-database-url==2.2.0
 Django==5.0.7
 django-allauth==0.63.6
+django-cloudinary-storage==0.3.0
 psycopg2-binary==2.9.9
 python-dotenv==1.0.1
 sqlparse==0.5.1

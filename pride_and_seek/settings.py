@@ -14,6 +14,7 @@ from pathlib import Path
 
 import os
 import sys
+import cloudinary
 import dj_database_url
 from dotenv import load_dotenv
 
@@ -46,6 +47,16 @@ CSRF_TRUSTED_ORIGINS = [
     "https://*.ws.codeinstitute-ide.net"
 ]
 
+# Load environment variables from .env file
+load_dotenv()
+
+cloudinary.config(
+    cloud_name=os.environ.get('CLOUDINARY_CLOUD_NAME'),
+    api_key=os.environ.get('CLOUDINARY_API_KEY'),
+    api_secret=os.environ.get('CLOUDINARY_API_SECRET'),
+    secure=True
+)
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -58,6 +69,8 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'allauth',
     'allauth.account',
+    'cloudinary',
+    'cloudinary_storage',
     'home',
     'about',
     'blog',
@@ -82,7 +95,7 @@ ACCOUNT_UNIQUE_EMAIL = True
 # Other settings
 ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
 ACCOUNT_SESSION_REMEMBER = True
-ACCOUNT_SIGNUP_REDIRECT_URL = '/'  # Where to redirect after signup
+ACCOUNT_SIGNUP_REDIRECT_URL = '/'  # Where to redirect after signu
 
 
 MIDDLEWARE = [
