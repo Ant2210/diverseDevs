@@ -20,6 +20,15 @@
                 <h3>Username: {{ form.username.value }}</h3>
             </div>
             <div class="mb-3">
+                <h3>First Name: {{ user.first_name }}</h3>
+            </div>
+            <div class="mb-3">
+                <h3>Last Name: {{ user.last_name }}</h3>
+            </div>
+            <div class="mb-3">
+                <h3>Email: {{ user.email }}</h3>
+            </div>
+            <div class="mb-3">
                 <h3>Profile Image:</h3>
                 {% if form.profile_image.value %}
                 <img src="{{ form.profile_image.value.url }}" alt="Profile Image" class="img-thumbnail rounded-circle"

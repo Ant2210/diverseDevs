@@ -9,10 +9,15 @@ def profile(request):
     if request.method == 'POST':
         form = UserProfileForm(request.POST, request.FILES, instance=user_profile)
         if form.is_valid():
+            user = form.instance.user
+            user.first_name = form.cleaned_data['first_name']
+            user.last_name = form.cleaned_data['last_name']
+            user.email = form.cleaned_data['email']
+            user.save()
             form.save()
             messages.success(request, 'Your profile has been updated successfully!')
             return redirect('profile')
     else:
         form = UserProfileForm(instance=user_profile)
     
-    return render(request, 'profiles/profile.html', {'form': form})
+    return render(request, 'profiles/profile.html', {'form': form, 'user': request.user})
