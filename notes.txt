@@ -2,3 +2,7 @@ To start the Django server in your browser:
 python3 manage.py runserver
 
 Ensure your URL is added to the "ALLOWED HOSTS" in settings.py otherwise you will receive an error in your browser
+
+Superuser Login Details:
+User: superuser
+Pass: pridehack
