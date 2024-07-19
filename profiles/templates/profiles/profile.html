@@ -6,36 +6,54 @@
 {% block content %}
 
 <div class="container mt-5">
-    <h1>Profile</h1>
+    <h1 class="text-center">Profile</h1>
     {% if messages %}
-        <div class="alert alert-success" role="alert">
-            {% for message in messages %}
-                {{ message }}
-            {% endfor %}
-        </div>
+    <div class="alert alert-success" role="alert">
+        {% for message in messages %}
+        {{ message }}
+        {% endfor %}
+    </div>
     {% endif %}
-    <div class="row">
-        <div class="col-md-6">
-            <h3>Username: {{ form.username.value }}</h3>
-        </div>
-        <div class="col-md-6">
-            <h3>Profile Image:</h3>
-            {% if form.profile_image.value %}
-                <img src="{{ form.profile_image.value.url }}" alt="Profile Image" class="img-thumbnail" style="max-width: 200px;">
-            {% else %}
+    <div class="card shadow-sm">
+        <div class="card-body text-center">
+            <div class="mb-3">
+                <h3>Username: {{ form.username.value }}</h3>
+            </div>
+            <div class="mb-3">
+                <h3>First Name: {{ user.first_name }}</h3>
+            </div>
+            <div class="mb-3">
+                <h3>Last Name: {{ user.last_name }}</h3>
+            </div>
+            <div class="mb-3">
+                <h3>Email: {{ user.email }}</h3>
+            </div>
+            <div class="mb-3">
+                <h3>Profile Image:</h3>
+                {% if form.profile_image.value %}
+                <img src="{{ form.profile_image.value.url }}" alt="Profile Image" class="img-thumbnail rounded-circle"
+                    style="width: 150px; height: 150px; object-fit: cover;">
+                {% else %}
                 <p>No image uploaded.</p>
+                {% endif %}
+            </div>
+            <div class="mb-3">
+                <h3>Gender: {{ form.gender.value }}</h3>
+            </div>
+            {% if form.custom_gender.value %}
+                <div class="mb-3">
+                    <h3>Custom Gender: {{ form.custom_gender.value }}</h3>
+                </div>
             {% endif %}
-        </div>
-        <div class="col-md-6">
-            <h3>Gender: {{ form.gender.value }}</h3>
-        </div>
-        <div class="col-md-6">
-            <h3>Custom Gender: {{ form.custom_gender.value }}</h3>
-        </div>
-        <div class="col-md-12 mt-3">
-            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#editProfileModal">
-                Edit Profile
-            </button>
+            <div class="mt-3">
+                <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                    data-bs-target="#editProfileModal">
+                    Edit Profile
+                </button>
+                <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteProfileModal">
+                    Delete Profile
+                </button>
+            </div>
         </div>
     </div>
 </div>
@@ -57,6 +75,28 @@
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </form>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for deleting profile -->
+<div class="modal fade" id="deleteProfileModal" tabindex="-1" aria-labelledby="deleteProfileModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteProfileModalLabel">Delete Profile</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to delete your profile? This action cannot be undone.</p>
+            </div>
+            <div class="modal-footer">
+                <form method="post" action="{% url 'delete_profile' %}">
+                    {% csrf_token %}
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </div>
         </div>
     </div>
 </div>
