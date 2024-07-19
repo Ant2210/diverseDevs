@@ -74,6 +74,7 @@ INSTALLED_APPS = [
     'home',
     'about',
     'blog',
+    'profiles',
 ]
 
 ### ALL-AUTH SETTINGS ###
