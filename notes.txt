@@ -3,5 +3,5 @@ python3 manage.py runserver
 
 
 Superuser Login Details:
-User: superuser
-Pass: pridehack
+User: superuser1
+Pass: pridehackers
