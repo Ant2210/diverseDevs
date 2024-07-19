@@ -1,7 +1,5 @@
 # 🏳️‍🌈🏳️‍🌈🏳️‍🌈 Proud Coders: July 2024 Hackathon 🏳️‍🌈🏳️‍🌈🏳️‍🌈
 
-# 🏳️‍🌈 Pride & Seek 🏳️‍🌈
-
 ![Pride & Seek banner](static/images/hackathon-banner.jpg)
 
 Add screenshot of live site here...
