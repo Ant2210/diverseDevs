@@ -1,21 +1,34 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+{% load static %}
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-        <a class="navbar-brand" href="{% url 'index' %}">Pride & Seek</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand" href="{% url 'index' %}"><img id="nav-logo" src="{% static 'images/textlogo2.webp' %}"
+                alt="Logo"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'about' %}">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'blog' %}">Blog</a>
-                </li>
-            </ul>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ms-auto d-flex align-items-center">
+                <div class="nav-item">
+                    <a class="nav-link hvr-underline-from-center" href="{% url 'index' %}">Home</a>
+                </div>
+                <div class="nav-item">
+                    <a class="nav-link hvr-underline-from-center" href="{% url 'about' %}">About</a>
+                </div>
+                <div class="nav-item">
+                    <a class="nav-link hvr-underline-from-center" href="{% url 'blog' %}">Blog</a>
+                </div>
+                <div class="nav-item">
+                    <a class="nav-link hvr-underline-from-center" href="#">Login</a>
+                </div>
+                <!-- <div class="nav-item">
+                    <a class="nav-link hvr-underline-from-center" href="#">Profile</a>
+                </div>
+                <div class="nav-item">
+                    <a class="nav-link hvr-underline-from-center" href="#">Log out</a>
+                </div> -->
+            </div>
         </div>
     </div>
 </nav>
