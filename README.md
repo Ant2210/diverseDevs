@@ -1,7 +1,5 @@
 # 🏳️‍🌈🏳️‍🌈🏳️‍🌈 Proud Coders: July 2024 Hackathon 🏳️‍🌈🏳️‍🌈🏳️‍🌈
 
-# 🏳️‍🌈 Pride & Seek 🏳️‍🌈
-
 ![Pride & Seek banner](static/images/hackathon-banner.jpg)
 
 Add screenshot of live site here...
@@ -30,6 +28,7 @@ The project is deployed and can be accessed at [http://your-deployed-link.com](h
 ## User Stories
 
 - New visitor
+
   - What is the website about?
   - Where can I find information on LGBTQIA+ friendly holiday destinations?
   - Which countries are supportive of LGBTQIA+ travellers?
@@ -38,6 +37,7 @@ The project is deployed and can be accessed at [http://your-deployed-link.com](h
   - Can I create an account on the site?
 
 - Returning visitor
+
   - How do I access the account I created previously?
   - Can I save countries as favourites?
   - Who else is travelling to the same country as me?
@@ -51,25 +51,25 @@ The project is deployed and can be accessed at [http://your-deployed-link.com](h
 In this section, we will briefly discuss how our team addressed the applicable criteria:
 
 - 🏳️‍🌈 The project demonstrates an impact on the LGBTQIA+ community
-  
+
   - Add text here
-    
+
 - 🏳️‍🌈 The project is realistic and has real world value
-  
-   - Add text here
-     
+
+  - Add text here
+
 - 🏳️‍🌈 The project has excellent design and layout
-  
+
   - Add text here
-    
+
 - 🏳️‍🌈 The project is presented to the judges in a professional manner
-  
+
   - Add text here
-    
+
 - 🏳️‍🌈 The project demonstrates innovation and creativity
-  
+
   - Add text here
-    
+
 ## Goal
 
 The goal section provides a concise summary of the main objective or purpose of the project or software described in this README. It addresses the following aspects:
@@ -77,22 +77,22 @@ The goal section provides a concise summary of the main objective or purpose of 
 - Problem Statement
 
   - Add text here
-  
+
 - Objective(s)
 
   - Add text here
-  
+
 - Target Audience
 
   - Add text here
-  
+
 - Benefits
 
   - Add text here
 
 ## Tech Used
 
-- [HTML](https://en.wikipedia.org/wiki/HTML), [CSS](https://en.wikipedia.org/wiki/CSS), [JavaScript](https://en.wikipedia.org/wiki/JavaScript), and [Bootstrap.](https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework))
+- [HTML](https://en.wikipedia.org/wiki/HTML), [CSS](https://en.wikipedia.org/wiki/CSS), [JavaScript](https://en.wikipedia.org/wiki/JavaScript), and [Bootstrap.](<https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)>)
 - [GitHub](https://github.com/) for version control.
 - [GitHub Pages](https://pages.github.com/) for hosting the website.
 - [Gitpod](https://gitpod.io/) for online IDE work.
