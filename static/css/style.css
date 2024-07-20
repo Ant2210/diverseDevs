@@ -39,6 +39,34 @@ main {
     transform: scale(0.95);
 }
 
+/*footer */
+
+footer {
+    text-align: center;
+    padding:1em 0;
+    font-size: 1.2rem;
+}
+
+.container > div {
+    padding: 1em 0;
+}
+
+.pride-logo {
+    width:50px;
+    height:50px;
+}
+
+@media screen and (min-width:1200px) {
+    /* footer */
+    footer {
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+    }
+    
 /* NAVBAR */
 
 .navbar {
