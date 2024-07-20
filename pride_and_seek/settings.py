@@ -14,6 +14,7 @@ from pathlib import Path
 
 import os
 import sys
+import cloudinary
 import dj_database_url
 from dotenv import load_dotenv
 
@@ -28,7 +29,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-2oijn@i1n&k^&h0rm#a#5laou(@_y!4k+!6$(y1*^1a)&57*g2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     ".gitpod.io",
@@ -46,6 +47,16 @@ CSRF_TRUSTED_ORIGINS = [
     "https://*.ws.codeinstitute-ide.net"
 ]
 
+# Load environment variables from .env file
+load_dotenv()
+
+cloudinary.config(
+    cloud_name=os.environ.get('CLOUDINARY_CLOUD_NAME'),
+    api_key=os.environ.get('CLOUDINARY_API_KEY'),
+    api_secret=os.environ.get('CLOUDINARY_API_SECRET'),
+    secure=True
+)
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -58,10 +69,14 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'allauth',
     'allauth.account',
+    'cloudinary',
+    'cloudinary_storage',
+    'crispy_forms',
+    'crispy_bootstrap5',
     'home',
     'about',
     'blog',
-    'map',
+    'profiles',
 ]
 
 ### ALL-AUTH SETTINGS ###
@@ -83,7 +98,7 @@ ACCOUNT_UNIQUE_EMAIL = True
 # Other settings
 ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
 ACCOUNT_SESSION_REMEMBER = True
-ACCOUNT_SIGNUP_REDIRECT_URL = '/'  # Where to redirect after signup
+ACCOUNT_SIGNUP_REDIRECT_URL = '/'  # Where to redirect after signu
 
 
 MIDDLEWARE = [
@@ -124,6 +139,9 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 WSGI_APPLICATION = 'pride_and_seek.wsgi.application'
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 
 # Database
