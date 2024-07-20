@@ -1,4 +1,5 @@
 from django import forms
+from django.contrib.auth.models import User
 from .models import UserProfile
 from allauth.account.forms import SignupForm
 from crispy_forms.helper import FormHelper
@@ -43,21 +44,29 @@ class UserProfileForm(forms.ModelForm):
 
 
 class CustomSignupForm(SignupForm):
-    profile_image = forms.ImageField(required=False)
+    first_name = forms.CharField(max_length=30, required=True)
+    last_name = forms.CharField(max_length=30, required=True)
     gender = forms.ChoiceField(choices=UserProfile.GENDER_CHOICES, required=False)
     custom_gender = forms.CharField(max_length=100, required=False)
 
+    def __init__(self, *args, **kwargs):
+        super(CustomSignupForm, self).__init__(*args, **kwargs)
+        self.fields['email'].required = True  # Make email field mandatory
+
     def save(self, request):
         user = super(CustomSignupForm, self).save(request)
-        profile_image = self.cleaned_data.get('profile_image')
+        user.first_name = self.cleaned_data.get('first_name')
+        user.last_name = self.cleaned_data.get('last_name')
+        user.save()
+
         gender = self.cleaned_data.get('gender')
         custom_gender = self.cleaned_data.get('custom_gender')
 
         UserProfile.objects.create(
             user=user,
-            profile_image=profile_image,
+            username=user.username,
             gender=gender,
-            custom_gender=custom_gender
+            custom_gender=custom_gender,
         )
 
         return user
