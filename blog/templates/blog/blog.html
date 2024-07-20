@@ -4,14 +4,26 @@
 {% block content %}
 
 <div class="container mt-4">
-    <div class="row"><h1 class="mt-4">The Blog</h1></div>
-    <ul class="nav nav-tabs" id="myTab" role="tablist" data-admin-url="{{ admin_posts_url }}" data-community-url="{{ community_posts_url }}">
+    {% load crispy_forms_tags %}
+    <div class="row">
+        <h1 class="mt-4">The Blog</h1>
+    </div>
+    <ul class="nav nav-tabs" id="myTab" role="tablist" data-admin-url="{{ admin_posts_url }}"
+        data-community-url="{{ community_posts_url }}">
         <li class="nav-item" role="presentation">
-            <a class="nav-link active" id="admin-posts-tab" data-bs-toggle="tab" href="#admin-posts" role="tab" aria-controls="admin-posts" aria-selected="true">Admin Posts</a>
+            <a class="nav-link active" id="admin-posts-tab" data-bs-toggle="tab" href="#admin-posts" role="tab"
+                aria-controls="admin-posts" aria-selected="true">Admin Posts</a>
         </li>
         <li class="nav-item" role="presentation">
-            <a class="nav-link" id="community-posts-tab" data-bs-toggle="tab" href="#community-posts" role="tab" aria-controls="community-posts" aria-selected="false">Community Posts</a>
+            <a class="nav-link" id="community-posts-tab" data-bs-toggle="tab" href="#community-posts" role="tab"
+                aria-controls="community-posts" aria-selected="false">Community Posts</a>
         </li>
+        {% if user.is_authenticated %}
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="contribute-tab" data-bs-toggle="tab" href="#contribute" role="tab"
+                aria-controls="contribute" aria-selected="false">Contribute to our Blog</a>
+        </li>
+        {% endif %}
     </ul>
     <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="admin-posts" role="tabpanel" aria-labelledby="admin-posts-tab">
@@ -20,6 +32,17 @@
         <div class="tab-pane fade" id="community-posts" role="tabpanel" aria-labelledby="community-posts-tab">
             <div id="community-posts-content"></div>
         </div>
+        {% if user.is_authenticated %}
+        <div class="tab-pane fade" id="contribute" role="tabpanel" aria-labelledby="contribute-tab">
+            <div id="contribute-content">
+                <form method="post" enctype="multipart/form-data" action="{% url 'create_post' %}">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+        {% endif %}
     </div>
 </div>
 
