@@ -1,6 +1,65 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
 
-<article class="container-fluid blog py-5">
+<article class="container-fluid blog pt-5 pb-3">
+    <div class="card">
+        <div class="card-header"><i class="fa-regular fa-user"></i> Olivia Morgan</div>
+        <img src="{% static 'images/blog-copenhagen.jpg' %}" class="img-fluid"
+            alt="A brightly coloured illustration of Copenhagen landmarks">
+        <div class="px-4 py-4">
+            <div class="card-body">
+                <h4 class="card-title">Discovering Copenhagen - A Safe and Inclusive Haven</h4>
+                <p class="card-text">Finding destinations that are both safe and inclusive can sometimes be a challenge.
+                    However, my recent trip to Copenhagen, which was arranged through Pride & Seek, was a refreshing and
+                    heartwarming experience that I am excited to share with you all.</p>
+                <p class="card-text">From the moment I arrived in Copenhagen, I felt a sense of acceptance and openness
+                    that is often hard to come by. The city is renowned for its progressive attitudes and strong
+                    commitment to equality, making it a perfect destination for LGBTQIA+ travellers.</p>
+                <h5 class="card-text">A Warm Welcome</h5>
+                <p class="card-text">One of the first things I noticed about Copenhagen was the warm and welcoming
+                    atmosphere. The locals are incredibly friendly and open-minded, and I never once felt out of place
+                    or judged. Whether I was exploring the vibrant streets of Nørrebro or enjoying a coffee in one of
+                    the many cozy cafes, I always felt at ease.</p>
+                <h5 class="card-text">Inclusive Accommodations</h5>
+                <p class="card-text">Finding LGBTQIA+ friendly accommodations can be tricky, but Copenhagen offers a
+                    wide range of options. I stayed at a charming boutique hotel in the heart of the city that proudly
+                    displayed rainbow flags and had a clear commitment to inclusivity. The staff were knowledgeable
+                    about LGBTQIA+ issues and provided excellent recommendations for places to visit and things to do.
+                </p>
+                <h5 class="card-text">Exploring the City</h5>
+                <p class="card-text">Copenhagen is a city that truly embraces diversity. One of the highlights of my
+                    trip was visiting the historic district of Christianshavn, where I found a vibrant and eclectic mix
+                    of people and cultures. The area is home to Freetown Christiania, a unique and autonomous
+                    neighbourhood known for its alternative lifestyle and welcoming community.</p>
+                <p class="card-text">Another must-visit is the famous Tivoli Gardens, one of the world's oldest
+                    amusement parks. Not only is it a fun and magical place to visit, but it also hosts various events
+                    and performances that celebrate diversity and inclusion.</p>
+                <h5 class="card-text">LGBTQIA+ Nightlife</h5>
+                <p class="card-text">Copenhagen's nightlife is another aspect that makes it a fantastic destination for
+                    travellers. The city boasts a variety of bars, clubs, and events. One of my favourite spots was the
+                    iconic Centralhjørnet, one of the oldest gay bars in Europe. The atmosphere was lively and
+                    inclusive, and I had a fantastic time meeting new people and dancing the night away.</p>
+                <h5 class="card-text">Pride and Festivals</h5>
+                <p class="card-text">If you have the chance to visit Copenhagen during Pride, I highly recommend it.
+                    Copenhagen Pride is one of the largest and most vibrant Pride events in Europe, attracting visitors
+                    from all over the world. The city comes alive with colourful parades, concerts, and parties, all
+                    celebrating love and equality.</p>
+                <h5 class="card-text">A Safe and Inclusive Environment</h5>
+                <p class="card-text">What truly sets Copenhagen apart is its commitment to creating a safe and inclusive
+                    environment for everyone. The city has strong anti-discrimination laws and a robust support system
+                    for LGBTQIA+ individuals. Public spaces are safe, and I never felt the need to hide my identity or
+                    be cautious about expressing myself.</p>
+                <h5 class="card-text">Final Thoughts</h5>
+                <p class="card-text">Copenhagen is a shining example of what an inclusive and welcoming destination
+                    should be. As a female LGBTQIA+ traveller, I felt safe, accepted, and celebrated throughout my
+                    visit. Whether you're looking for cultural experiences, vibrant nightlife, or simply a place where
+                    you can be yourself, Copenhagen is a destination that should be at the top of your list.</p>
+            </div>
+        </div>
+        <div class="card-footer text-body-secondary">2 days ago</div>
+    </div>
+</article>
+
+<article class="container-fluid blog pt-5 pb-3">
     <div class="card">
         <div class="card-header"><i class="fa-regular fa-pen-to-square"></i> Pride & Seek</i></div>
         <img src="{% static 'images/blog-navigating-challenges.jpg' %}" class="img-fluid"
@@ -81,66 +140,7 @@
     </div>
 </article>
 
-<article class="container-fluid blog mb-5">
-    <div class="card">
-        <div class="card-header"><i class="fa-regular fa-user"></i> Olivia Morgan</div>
-        <img src="{% static 'images/blog-copenhagen.jpg' %}" class="img-fluid"
-            alt="A brightly coloured illustration of Copenhagen landmarks">
-        <div class="px-4 py-4">
-            <div class="card-body">
-                <h4 class="card-title">Discovering Copenhagen - A Safe and Inclusive Haven</h4>
-                <p class="card-text">Finding destinations that are both safe and inclusive can sometimes be a challenge.
-                    However, my recent trip to Copenhagen, which was arranged through Pride & Seek, was a refreshing and
-                    heartwarming experience that I am excited to share with you all.</p>
-                <p class="card-text">From the moment I arrived in Copenhagen, I felt a sense of acceptance and openness
-                    that is often hard to come by. The city is renowned for its progressive attitudes and strong
-                    commitment to equality, making it a perfect destination for LGBTQIA+ travellers.</p>
-                <h5 class="card-text">A Warm Welcome</h5>
-                <p class="card-text">One of the first things I noticed about Copenhagen was the warm and welcoming
-                    atmosphere. The locals are incredibly friendly and open-minded, and I never once felt out of place
-                    or judged. Whether I was exploring the vibrant streets of Nørrebro or enjoying a coffee in one of
-                    the many cozy cafes, I always felt at ease.</p>
-                <h5 class="card-text">Inclusive Accommodations</h5>
-                <p class="card-text">Finding LGBTQIA+ friendly accommodations can be tricky, but Copenhagen offers a
-                    wide range of options. I stayed at a charming boutique hotel in the heart of the city that proudly
-                    displayed rainbow flags and had a clear commitment to inclusivity. The staff were knowledgeable
-                    about LGBTQIA+ issues and provided excellent recommendations for places to visit and things to do.
-                </p>
-                <h5 class="card-text">Exploring the City</h5>
-                <p class="card-text">Copenhagen is a city that truly embraces diversity. One of the highlights of my
-                    trip was visiting the historic district of Christianshavn, where I found a vibrant and eclectic mix
-                    of people and cultures. The area is home to Freetown Christiania, a unique and autonomous
-                    neighbourhood known for its alternative lifestyle and welcoming community.</p>
-                <p class="card-text">Another must-visit is the famous Tivoli Gardens, one of the world's oldest
-                    amusement parks. Not only is it a fun and magical place to visit, but it also hosts various events
-                    and performances that celebrate diversity and inclusion.</p>
-                <h5 class="card-text">LGBTQIA+ Nightlife</h5>
-                <p class="card-text">Copenhagen's nightlife is another aspect that makes it a fantastic destination for
-                    travellers. The city boasts a variety of bars, clubs, and events. One of my favourite spots was the
-                    iconic Centralhjørnet, one of the oldest gay bars in Europe. The atmosphere was lively and
-                    inclusive, and I had a fantastic time meeting new people and dancing the night away.</p>
-                <h5 class="card-text">Pride and Festivals</h5>
-                <p class="card-text">If you have the chance to visit Copenhagen during Pride, I highly recommend it.
-                    Copenhagen Pride is one of the largest and most vibrant Pride events in Europe, attracting visitors
-                    from all over the world. The city comes alive with colourful parades, concerts, and parties, all
-                    celebrating love and equality.</p>
-                <h5 class="card-text">A Safe and Inclusive Environment</h5>
-                <p class="card-text">What truly sets Copenhagen apart is its commitment to creating a safe and inclusive
-                    environment for everyone. The city has strong anti-discrimination laws and a robust support system
-                    for LGBTQIA+ individuals. Public spaces are safe, and I never felt the need to hide my identity or
-                    be cautious about expressing myself.</p>
-                <h5 class="card-text">Final Thoughts</h5>
-                <p class="card-text">Copenhagen is a shining example of what an inclusive and welcoming destination
-                    should be. As a female LGBTQIA+ traveller, I felt safe, accepted, and celebrated throughout my
-                    visit. Whether you're looking for cultural experiences, vibrant nightlife, or simply a place where
-                    you can be yourself, Copenhagen is a destination that should be at the top of your list.</p>
-            </div>
-        </div>
-        <div class="card-footer text-body-secondary">2 days ago</div>
-    </div>
-</article>
-
-<article class="container-fluid blog mb-5">
+<article class="container-fluid blog pt-5 pb-3">
     <div class="card">
         <div class="card-header"><i class="fa-regular fa-pen-to-square"></i> Pride & Seek</i></div>
         <img src="{% static 'images/blog-safe-destinations.jpg' %}" class="img-fluid"
