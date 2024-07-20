@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %}{% load static %}
 
 {% block content %}
 <div class="container">
@@ -18,7 +18,7 @@
 
     <div class="row mt-3">
         <div class="col-lg-6">
-            <img src="/static/images/offers.webp" class="img-fluid" alt="vibrant image grid showing diverse lgbtq joy of travel experiences">
+            <img src="{%static 'images/offers.webp'%}" class="img-fluid" alt="vibrant image grid showing diverse lgbtq joy of travel experiences">
         </div>
         <div class="col-lg-6 mt-5">
             <h2>What We Offer</h2>
@@ -86,7 +86,7 @@
             </p>
         </div>
         <div class="col-lg-6 mb-4">
-            <img src="/static/images/commitment.webp" class="img-fluid" alt="About Image 2">
+            <img src="{%static 'images/commitment.webp'%}" class="img-fluid" alt="About Image 2">
         </div>
     </div>
 </div>
