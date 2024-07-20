@@ -1,6 +1,6 @@
 # 🏳️‍🌈🏳️‍🌈🏳️‍🌈 Proud Coders: July 2024 Hackathon 🏳️‍🌈🏳️‍🌈🏳️‍🌈
 
-![Pride & Seek banner](static/images/hackathon-banner.jpg)
+![Pride & Seek banner](static/images/hackathon-banner-no-slogan.jpg)
 
 Add screenshot of live site here...
 
@@ -52,23 +52,23 @@ In this section, we will briefly discuss how our team addressed the applicable c
 
 - 🏳️‍🌈 The project demonstrates an impact on the LGBTQIA+ community
 
-  - Add text here
+  - The site is specifically designed to enable members of the LGBTQIA+ community to find destinations that are safe and inclusive, enable them to book holidays, and post blogs about there trips (upon signing up for a user account).
 
 - 🏳️‍🌈 The project is realistic and has real world value
 
-  - Add text here
+  - It enables people to book holidays safe in the knowledge that they are visiting a LGBTQIA+ friendly country.
 
 - 🏳️‍🌈 The project has excellent design and layout
 
-  - Add text here
+  - The site features consistent navigation and design (such as colour scheme) across all pages.
 
 - 🏳️‍🌈 The project is presented to the judges in a professional manner
 
-  - Add text here
+  - The project will be presented to the judges by members of the team.
 
 - 🏳️‍🌈 The project demonstrates innovation and creativity
 
-  - Add text here
+  - The main feature of the site is an interactive map that users can click to discover countries that are safe to visit, and those to avoid.
 
 ## Goal
 
@@ -76,25 +76,27 @@ The goal section provides a concise summary of the main objective or purpose of 
 
 - Problem Statement
 
-  - Add text here
+  - It is illegal in over 70 countries around the world to identify as a member of the LGBTQIA+ community, and there is therefore a need for a travel site(s) to serve the LGBTQIA+ community with tailored suggestions on where to visit and where to avoid.
 
 - Objective(s)
 
-  - Add text here
+  - Create a site that allows users to find safe destinations, book holidays to those destinations, and share their experiences afterwards.
 
 - Target Audience
 
-  - Add text here
+  - LGBTQIA community and their allies.
+  - Anyone who is concerned about visiting non-inclusive countries that do not support diversity.
 
 - Benefits
 
-  - Add text here
+  - Allow users to feel assured that they can travel in safety.
 
 ## Tech Used
 
 - [HTML](https://en.wikipedia.org/wiki/HTML), [CSS](https://en.wikipedia.org/wiki/CSS), [JavaScript](https://en.wikipedia.org/wiki/JavaScript), and [Bootstrap.](<https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)>)
 - [GitHub](https://github.com/) for version control.
 - [GitHub Pages](https://pages.github.com/) for hosting the website.
+- [Heroku](https://www.heroku.com/) for deployment via GitHub Pages.
 - [Gitpod](https://gitpod.io/) for online IDE work.
 - [Markdown](https://en.wikipedia.org/wiki/Markdown) for the README.md.
 - [Figma](https://www.figma.com/) for wireframes.
@@ -104,8 +106,19 @@ The goal section provides a concise summary of the main objective or purpose of 
 
 ## Credits
 
-Add credits here ...
+Blog post images sourced from [Deposit Photos](https://depositphotos.com/):
+
+- [Rainbow World Map](https://depositphotos.com/vector/map-silhouette-of-the-continents-of-earth-painted-in-colors-of-the-rainbow-lgbt-flag-203681954.html) taken by koksikoks.
+- [Copenhagen Illustrative Skyline](https://depositphotos.com/vector/copenhagen-skyline-with-color-landmarks-and-blue-sky-157290390.html) taken by booblgum.
+- [Beach Hammock](https://depositphotos.com/photo/beach-hammock-2531939.html) taken by endhals.
 
 ## Acknowledgements
 
-Add acknowledgements here ...
+- Thanks to Code Institute for the chance to work on this hackathon.
+- Thanks to all team members, for their work and co-operation:
+  - Sarah Ankers.
+  - James (Rob) Cutmore.
+  - Dominic Francis.
+  - Anthony Griffiths.
+  - Oliver Sharp. 
+  - Henna Singh.
