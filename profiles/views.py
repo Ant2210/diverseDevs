@@ -2,7 +2,11 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.contrib.auth import logout
-from .forms import UserProfileForm
+from allauth.account.views import SignupView
+from .forms import UserProfileForm, CustomSignupForm
+
+class CustomSignupView(SignupView):
+    form_class = CustomSignupForm
 
 @login_required
 def profile(request):

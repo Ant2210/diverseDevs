@@ -1,5 +1,6 @@
 from django import forms
 from .models import UserProfile
+from allauth.account.forms import SignupForm
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit, Layout, Field
 
@@ -39,3 +40,24 @@ class UserProfileForm(forms.ModelForm):
             self.fields['first_name'].initial = user.first_name
             self.fields['last_name'].initial = user.last_name
             self.fields['email'].initial = user.email
+
+
+class CustomSignupForm(SignupForm):
+    profile_image = forms.ImageField(required=False)
+    gender = forms.ChoiceField(choices=UserProfile.GENDER_CHOICES, required=False)
+    custom_gender = forms.CharField(max_length=100, required=False)
+
+    def save(self, request):
+        user = super(CustomSignupForm, self).save(request)
+        profile_image = self.cleaned_data.get('profile_image')
+        gender = self.cleaned_data.get('gender')
+        custom_gender = self.cleaned_data.get('custom_gender')
+
+        UserProfile.objects.create(
+            user=user,
+            profile_image=profile_image,
+            gender=gender,
+            custom_gender=custom_gender
+        )
+
+        return user
