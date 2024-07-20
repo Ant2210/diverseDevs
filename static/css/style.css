@@ -51,20 +51,33 @@ footer {
     padding: 1em 0;
 }
 
-.pride-logo {
-    width:50px;
-    height:50px;
+.container a {
+    text-decoration: none;
 }
 
+.pride-logo {
+    width:100px;
+    padding: 0 0.4em;
+}
+
+.container p {
+    letter-spacing: 1px;
+}
+
+.social-links i {
+    font-size: 130%;
+}
 @media screen and (min-width:1200px) {
     /* footer */
     footer {
         .container {
             display: flex;
             justify-content: center;
-            align-items: center;
-            
+            align-items: center;    
         }
+    .social-links {
+        width:20%;
+    }
     }
     
 /* NAVBAR */
