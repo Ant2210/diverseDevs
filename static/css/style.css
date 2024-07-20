@@ -187,6 +187,11 @@ footer {
     margin-bottom: 1rem;
 }
 
+.author-text {
+    font-size: 0.5em;
+    color: #555;
+}
+
 @media (min-width: 768px) {
     .card-body img {
         max-height: 300px;
