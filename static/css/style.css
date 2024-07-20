@@ -79,6 +79,7 @@ footer {
         width:20%;
     }
     }
+}
     
 /* NAVBAR */
 
@@ -166,4 +167,39 @@ footer {
 
 .card-header {
     text-align: right;
+}
+
+.nav-tabs .nav-link {
+    color: #007bff;
+    cursor: pointer;
+}
+
+.nav-tabs .nav-link.active {
+    color: #495057;
+    background-color: #fff;
+    border-color: #dee2e6 #dee2e6 #fff;
+}
+
+/* Custom styles for the blog cards */
+.card-body img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.author-text {
+    font-size: 0.5em;
+    color: #555;
+}
+
+@media (min-width: 768px) {
+    .card-body img {
+        max-height: 300px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .card-body .row {
+        flex-direction: column;
+    }
 }
