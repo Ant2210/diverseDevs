@@ -1,0 +1,8 @@
+{% for post in posts %}
+    <div>
+        <h2>{{ post.title }}</h2>
+        <img src="{{ post.image.url }}" alt="{{ post.title }}">
+        <p>{{ post.content }}</p>
+        <small>{{ post.created_at }}</small>
+    </div>
+{% endfor %}

@@ -79,6 +79,7 @@ footer {
         width:20%;
     }
     }
+}
     
 /* NAVBAR */
 
@@ -166,4 +167,15 @@ footer {
 
 .card-header {
     text-align: right;
+}
+
+.nav-tabs .nav-link {
+    color: #007bff;
+    cursor: pointer;
+}
+
+.nav-tabs .nav-link.active {
+    color: #495057;
+    background-color: #fff;
+    border-color: #dee2e6 #dee2e6 #fff;
 }
