@@ -29,7 +29,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-2oijn@i1n&k^&h0rm#a#5laou(@_y!4k+!6$(y1*^1a)&57*g2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     ".gitpod.io",
@@ -87,8 +87,9 @@ LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
 # Email verification
-ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
-ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+# ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+# ACCOUNT_EMAIL_REQUIRED = True
 
 # Signup
 ACCOUNT_USERNAME_REQUIRED = True
@@ -98,7 +99,7 @@ ACCOUNT_UNIQUE_EMAIL = True
 # Other settings
 ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
 ACCOUNT_SESSION_REMEMBER = True
-ACCOUNT_SIGNUP_REDIRECT_URL = '/'  # Where to redirect after signu
+ACCOUNT_SIGNUP_REDIRECT_URL = '/'  # Where to redirect after signup
 
 
 MIDDLEWARE = [
