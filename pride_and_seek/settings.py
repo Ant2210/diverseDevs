@@ -29,7 +29,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-2oijn@i1n&k^&h0rm#a#5laou(@_y!4k+!6$(y1*^1a)&57*g2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     ".gitpod.io",
@@ -47,16 +47,6 @@ CSRF_TRUSTED_ORIGINS = [
     "https://*.ws.codeinstitute-ide.net"
 ]
 
-# Load environment variables from .env file
-load_dotenv()
-
-cloudinary.config(
-    cloud_name=os.environ.get('CLOUDINARY_CLOUD_NAME'),
-    api_key=os.environ.get('CLOUDINARY_API_KEY'),
-    api_secret=os.environ.get('CLOUDINARY_API_SECRET'),
-    secure=True
-)
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -66,11 +56,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cloudinary_storage',
     'django.contrib.sites',
     'allauth',
     'allauth.account',
     'cloudinary',
-    'cloudinary_storage',
     'crispy_forms',
     'crispy_bootstrap5',
     'home',
@@ -87,8 +77,9 @@ LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
 # Email verification
-ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
-ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+# ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+# ACCOUNT_EMAIL_REQUIRED = True
 
 # Signup
 ACCOUNT_USERNAME_REQUIRED = True
@@ -98,7 +89,7 @@ ACCOUNT_UNIQUE_EMAIL = True
 # Other settings
 ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
 ACCOUNT_SESSION_REMEMBER = True
-ACCOUNT_SIGNUP_REDIRECT_URL = '/'  # Where to redirect after signu
+ACCOUNT_SIGNUP_REDIRECT_URL = '/'  # Where to redirect after signup
 
 
 MIDDLEWARE = [
@@ -191,6 +182,21 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / "static"]
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Load environment variables from .env file
+load_dotenv()
+
+cloudinary.config(
+    cloud_name=os.environ.get('CLOUDINARY_CLOUD_NAME'),
+    api_key=os.environ.get('CLOUDINARY_API_KEY'),
+    api_secret=os.environ.get('CLOUDINARY_API_SECRET'),
+    secure=True
+)
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
