@@ -179,3 +179,22 @@ footer {
     background-color: #fff;
     border-color: #dee2e6 #dee2e6 #fff;
 }
+
+/* Custom styles for the blog cards */
+.card-body img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+    .card-body img {
+        max-height: 300px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .card-body .row {
+        flex-direction: column;
+    }
+}
