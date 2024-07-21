@@ -118,7 +118,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'myapp.context_processors.travel_api_keys',
+                'search.context_processors.travel_api_keys',
             ],
         },
     },
