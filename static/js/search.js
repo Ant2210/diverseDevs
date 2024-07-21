@@ -9,8 +9,8 @@ const generateAccessToken = async () => {
 				},
 				body: new URLSearchParams({
 					grant_type: "client_credentials",
-					client_id: "hhGItXNOfcq9f5n4hNq3DDM5FDgy8IB1",
-					client_secret: "IvMsEOBxlxFP4eOe",
+					client_id: travelApiKey,
+					client_secret: travelApiSecret,
 				}),
 			}
 		);
