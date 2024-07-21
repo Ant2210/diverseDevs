@@ -14,6 +14,7 @@ from pathlib import Path
 
 import os
 import sys
+import environ
 import cloudinary
 import dj_database_url
 from dotenv import load_dotenv
@@ -117,6 +118,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'myapp.context_processors.travel_api_keys',
             ],
         },
     },
@@ -208,6 +210,12 @@ MESSAGE_TAGS = {
     messages.WARNING: 'warning',
     messages.ERROR: 'danger',
 }
+
+env = environ.Env()
+environ.Env.read_env()
+
+TRAVEL_API_KEY = env('TRAVEL_API_KEY')
+TRAVEL_API_SECRET = env('TRAVEL_API_SECRET')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
