@@ -43,11 +43,11 @@ main {
 
 footer {
     text-align: center;
-    padding:1em 0;
+    padding: 1em 0;
     font-size: 1.2rem;
 }
 
-.container > div {
+.container>div {
     padding: 1em 0;
 }
 
@@ -56,7 +56,7 @@ footer {
 }
 
 .pride-logo {
-    width:100px;
+    width: 100px;
     padding: 0 0.4em;
 }
 
@@ -67,20 +67,21 @@ footer {
 .social-links i {
     font-size: 130%;
 }
+
 @media screen and (min-width:1200px) {
+
     /* footer */
     footer {
         .container {
             display: flex;
             justify-content: center;
-            align-items: center;    
+            align-items: center;
+
         }
-    .social-links {
-        width:20%;
-    }
     }
 }
-    
+
+
 /* NAVBAR */
 
 .navbar {
@@ -167,6 +168,55 @@ footer {
 
 .card-header {
     text-align: right;
+}
+
+/* MAP */
+#map-wrapper {
+    width: 95%;
+    max-height: 90%;
+
+    overflow: hidden;
+    position: relative;
+}
+
+svg {
+    width: 100%;
+    height: 100%;
+    cursor: grab;
+    fill: gray;
+    stroke: #fff;
+    stroke-width: 0.5px;
+}
+
+#mapSVG path:hover {
+    cursor: pointer;
+    filter: brightness(1.5);
+    stroke: #919191;
+    stroke-width: 1px;
+    transition: filter 0.4s, stroke 0.4s;
+}
+
+#mapSVG path {
+    outline: none;
+}
+
+.zoom-controls {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.zoom-controls button {
+    margin: 2px 0;
+}
+
+@media screen and (min-width:768px) {
+
+    #map-wrapper {
+        height: 600px;
+    }
 }
 
 .nav-tabs .nav-link {

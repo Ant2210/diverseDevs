@@ -1,0 +1,14 @@
+[
+	{
+		"countryID": "AF",
+		"CountryName": "Afghanistan",
+		"criminalization": "Criminalises LGBT people, criminalises sexual activity between males, criminalises sexual activity between females",
+		"maxPenalty": "Death Penalty"
+	},
+	{
+		"countryID": "BD",
+		"CountryName": "Bangladesh",
+		"criminalization": "Criminalises LGBT people, criminalises sexual activity between males",
+		"maxPenalty": "Life imprisonment"
+	}
+]
