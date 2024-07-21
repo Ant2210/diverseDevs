@@ -60,7 +60,7 @@ In this section, we will briefly discuss how our team addressed the applicable c
 
 - 🏳️‍🌈 The project has excellent design and layout
 
-  - The site features consistent navigation and design (such as colour scheme) across all pages.
+  - The site features consistent navigation and design (such as colour scheme) across all pages. The colours of LGBTQIA+ friendly countries on the interactive map are randomly assigned upon page load, to represent the diversity of the community (unfriendly countries remain grey at all times).
 
 - 🏳️‍🌈 The project is presented to the judges in a professional manner
 
