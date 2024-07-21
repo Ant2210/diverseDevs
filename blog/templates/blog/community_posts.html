@@ -17,26 +17,96 @@
                 {% endif %}
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-4">
-                <img src="{{ post.image.url }}" class="img-fluid" alt="{{ post.title }}">
-            </div>
-            <div class="col-md-8">
-                <div class="preview-content" id="previewContent{{ post.id }}">
-                    <p class="card-text">{{ post.content|truncatechars:200 }}</p>
+
+        <div class="preview-content" id="previewContent{{ post.id }}">
+            <div class="row mb-3">
+                {% if post.image1 %}
+                <div class="col-md-4">
+                    <img src="{{ post.image1.url }}" class="img-fluid" alt="{{ post.title }}">
                 </div>
-                <div class="full-content d-none" id="fullContent{{ post.id }}">
-                    <p class="card-text">{{ post.content }}</p>
-                    <small class="text-muted">{{ post.created_at }}</small>
+                {% endif %}
+                <div class="{% if post.image1 %}col-md-8{% else %}col-md-12{% endif %}">
+                    {% if post.content1 %}
+                    <p class="card-text">{{ post.content1|truncatechars:370 }}</p>
+                    {% endif %}
                 </div>
             </div>
         </div>
+
+        <div class="full-content d-none" id="fullContent{{ post.id }}">
+            <div class="row mb-3">
+                {% if post.image1 %}
+                <div class="col-md-4">
+                    <img src="{{ post.image1.url }}" class="img-fluid" alt="{{ post.title }}">
+                </div>
+                {% endif %}
+                <div class="{% if post.image1 %}col-md-8{% else %}col-md-12{% endif %}">
+                    {% if post.header1 %}
+                    <h3>{{ post.header1 }}</h3>
+                    {% endif %}
+                    {% if post.content1 %}
+                    <p class="card-text">{{ post.content1 }}</p>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="{% if post.image2 %}col-md-8 order-md-1{% else %}col-md-12{% endif %}">
+                    {% if post.header2 %}
+                    <h3>{{ post.header2 }}</h3>
+                    {% endif %}
+                    {% if post.content2 %}
+                    <p class="card-text">{{ post.content2 }}</p>
+                    {% endif %}
+                </div>
+                {% if post.image2 %}
+                <div class="col-md-4 order-md-0">
+                    <img src="{{ post.image2.url }}" class="img-fluid" alt="{{ post.title }}">
+                </div>
+                {% endif %}
+            </div>
+
+            <div class="row mb-3">
+                {% if post.image3 %}
+                <div class="col-md-4">
+                    <img src="{{ post.image3.url }}" class="img-fluid" alt="{{ post.title }}">
+                </div>
+                {% endif %}
+                <div class="{% if post.image3 %}col-md-8{% else %}col-md-12{% endif %}">
+                    {% if post.header3 %}
+                    <h3>{{ post.header3 }}</h3>
+                    {% endif %}
+                    {% if post.content3 %}
+                    <p class="card-text">{{ post.content3 }}</p>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="{% if post.image4 %}col-md-8 order-md-1{% else %}col-md-12{% endif %}">
+                    {% if post.header4 %}
+                    <h3>{{ post.header4 }}</h3>
+                    {% endif %}
+                    {% if post.content4 %}
+                    <p class="card-text">{{ post.content4 }}</p>
+                    {% endif %}
+                </div>
+                {% if post.image4 %}
+                <div class="col-md-4 order-md-0">
+                    <img src="{{ post.image4.url }}" class="img-fluid" alt="{{ post.title }}">
+                </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <small class="text-muted">{{ post.created_at }}</small>
     </div>
 </div>
 <div class="read-more-container mb-3">
-    <button type="button" class="btn btn-link w-100" onclick="toggleContent(this)"
-        data-post-id="{{ post.id }}">Read More</button>
+    <button type="button" class="btn btn-link w-100" onclick="toggleContent(this)" data-post-id="{{ post.id }}">Read
+        More</button>
 </div>
+
 <!-- Edit Post Modal -->
 <div class="modal fade" id="editPostModal{{ post.id }}" tabindex="-1" aria-labelledby="editPostModalLabel{{ post.id }}"
     aria-hidden="true">
