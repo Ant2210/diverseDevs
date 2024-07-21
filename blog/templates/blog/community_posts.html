@@ -17,26 +17,96 @@
                 {% endif %}
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-4">
-                <img src="{{ post.image.url }}" class="img-fluid" alt="{{ post.title }}">
-            </div>
-            <div class="col-md-8">
-                <div class="preview-content" id="previewContent{{ post.id }}">
-                    <p class="card-text">{{ post.content|truncatechars:200 }}</p>
+
+        <div class="preview-content" id="previewContent{{ post.id }}">
+            <div class="row mb-3">
+                {% if post.image1 %}
+                <div class="col-md-4">
+                    <img src="{{ post.image1.url }}" class="img-fluid" alt="{{ post.title }}">
                 </div>
-                <div class="full-content d-none" id="fullContent{{ post.id }}">
-                    <p class="card-text">{{ post.content }}</p>
-                    <small class="text-muted">{{ post.created_at }}</small>
+                {% endif %}
+                <div class="{% if post.image1 %}col-md-8{% else %}col-md-12{% endif %}">
+                    {% if post.content1 %}
+                    <p class="card-text">{{ post.content1|truncatechars:370 }}</p>
+                    {% endif %}
                 </div>
             </div>
         </div>
+
+        <div class="full-content d-none" id="fullContent{{ post.id }}">
+            <div class="row mb-3">
+                {% if post.image1 %}
+                <div class="col-md-4">
+                    <img src="{{ post.image1.url }}" class="img-fluid" alt="{{ post.title }}">
+                </div>
+                {% endif %}
+                <div class="{% if post.image1 %}col-md-8{% else %}col-md-12{% endif %}">
+                    {% if post.header1 %}
+                    <h3>{{ post.header1 }}</h3>
+                    {% endif %}
+                    {% if post.content1 %}
+                    <p class="card-text">{{ post.content1 }}</p>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="{% if post.image2 %}col-md-8 order-md-1{% else %}col-md-12{% endif %}">
+                    {% if post.header2 %}
+                    <h3>{{ post.header2 }}</h3>
+                    {% endif %}
+                    {% if post.content2 %}
+                    <p class="card-text">{{ post.content2 }}</p>
+                    {% endif %}
+                </div>
+                {% if post.image2 %}
+                <div class="col-md-4 order-md-0">
+                    <img src="{{ post.image2.url }}" class="img-fluid" alt="{{ post.title }}">
+                </div>
+                {% endif %}
+            </div>
+
+            <div class="row mb-3">
+                {% if post.image3 %}
+                <div class="col-md-4">
+                    <img src="{{ post.image3.url }}" class="img-fluid" alt="{{ post.title }}">
+                </div>
+                {% endif %}
+                <div class="{% if post.image3 %}col-md-8{% else %}col-md-12{% endif %}">
+                    {% if post.header3 %}
+                    <h3>{{ post.header3 }}</h3>
+                    {% endif %}
+                    {% if post.content3 %}
+                    <p class="card-text">{{ post.content3 }}</p>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="{% if post.image4 %}col-md-8 order-md-1{% else %}col-md-12{% endif %}">
+                    {% if post.header4 %}
+                    <h3>{{ post.header4 }}</h3>
+                    {% endif %}
+                    {% if post.content4 %}
+                    <p class="card-text">{{ post.content4 }}</p>
+                    {% endif %}
+                </div>
+                {% if post.image4 %}
+                <div class="col-md-4 order-md-0">
+                    <img src="{{ post.image4.url }}" class="img-fluid" alt="{{ post.title }}">
+                </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <small class="text-muted">{{ post.created_at }}</small>
     </div>
 </div>
 <div class="read-more-container mb-3">
-    <button type="button" class="btn btn-link w-100" onclick="toggleContent(this)"
-        data-post-id="{{ post.id }}">Read More</button>
+    <button type="button" class="btn btn-link w-100" onclick="toggleContent(this)" data-post-id="{{ post.id }}">Read
+        More</button>
 </div>
+
 <!-- Edit Post Modal -->
 <div class="modal fade" id="editPostModal{{ post.id }}" tabindex="-1" aria-labelledby="editPostModalLabel{{ post.id }}"
     aria-hidden="true">
@@ -55,13 +125,52 @@
                             value="{{ post.title }}">
                     </div>
                     <div class="mb-3">
-                        <label for="id_image_{{ post.id }}" class="form-label">Image</label>
-                        <input type="file" class="form-control" id="id_image_{{ post.id }}" name="image">
+                        <label for="id_image1_{{ post.id }}" class="form-label">Image 1</label>
+                        <input type="file" class="form-control" id="id_image1_{{ post.id }}" name="image1">
                     </div>
                     <div class="mb-3">
-                        <label for="id_content_{{ post.id }}" class="form-label">Content</label>
-                        <textarea class="form-control" id="id_content_{{ post.id }}" name="content"
-                            rows="5">{{ post.content }}</textarea>
+                        <label for="id_header1_{{ post.id }}" class="form-label">Header 1</label>
+                        <input type="text" class="form-control" id="id_header1_{{ post.id }}" name="header1"
+                            value="{{ post.header1 }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="id_content1_{{ post.id }}" class="form-label">Content 1</label>
+                        <textarea class="form-control" id="id_content1_{{ post.id }}" name="content1"
+                            rows="5">{{ post.content1 }}</textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="id_image2_{{ post.id }}" class="form-label">Image 2</label>
+                        <input type="file" class="form-control" id="id_image2_{{ post.id }}" name="image2">
+                    </div>
+                    <div class="mb-3">
+                        <label for="id_header2_{{ post.id }}" class="form-label">Header 2</label>
+                        <input type="text" class="form-control" id="id_header2_{{ post.id }}" name="header2"
+                            value="{{ post.header2 }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="id_content2_{{ post.id }}" class="form-label">Content 2</label>
+                        <textarea class="form-control" id="id_content2_{{ post.id }}" name="content2"
+                            rows="5">{{ post.content2 }}</textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="id_header3_{{ post.id }}" class="form-label">Header 3</label>
+                        <input type="text" class="form-control" id="id_header3_{{ post.id }}" name="header3"
+                            value="{{ post.header3 }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="id_content3_{{ post.id }}" class="form-label">Content 3</label>
+                        <textarea class="form-control" id="id_content3_{{ post.id }}" name="content3"
+                            rows="5">{{ post.content3 }}</textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="id_header4_{{ post.id }}" class="form-label">Header 4</label>
+                        <input type="text" class="form-control" id="id_header4_{{ post.id }}" name="header4"
+                            value="{{ post.header4 }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="id_content4_{{ post.id }}" class="form-label">Content 4</label>
+                        <textarea class="form-control" id="id_content4_{{ post.id }}" name="content4"
+                            rows="5">{{ post.content4 }}</textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Save changes</button>
                 </form>

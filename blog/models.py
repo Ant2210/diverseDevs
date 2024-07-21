@@ -9,13 +9,16 @@ class Post(models.Model):
     ]
     
     title = models.CharField(max_length=200)
-    image = CloudinaryField('image')
+    image1 = CloudinaryField('image1', null=True)
     header1 = models.CharField(max_length=200, blank=True, null=True)
     content1 = models.TextField(blank=True, null=True)
+    image2 = CloudinaryField('image2', null=True)
     header2 = models.CharField(max_length=200, blank=True, null=True)
     content2 = models.TextField(blank=True, null=True)
+    image3 = CloudinaryField('image3', null=True)
     header3 = models.CharField(max_length=200, blank=True, null=True)
     content3 = models.TextField(blank=True, null=True)
+    image4 = CloudinaryField('image4', null=True)
     header4 = models.CharField(max_length=200, blank=True, null=True)
     content4 = models.TextField(blank=True, null=True)
     post_type = models.CharField(max_length=10, choices=POST_TYPE_CHOICES)

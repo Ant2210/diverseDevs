@@ -48,14 +48,10 @@
             {% include 'includes/nav.html' %}
         </header>
 
-
-        {% block content %}
         {% if messages %}
-        <div class="container mt-4">
+        <div class="alert alert-success" role="alert">
             {% for message in messages %}
-            <div class="alert alert-{{ message.tags }}" role="alert">
-                {{ message }}
-            </div>
+            {{ message }}
             {% endfor %}
         </div>
         {% endif %}
