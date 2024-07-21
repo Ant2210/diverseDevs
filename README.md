@@ -103,6 +103,8 @@ The goal section provides a concise summary of the main objective or purpose of 
 - [Sarah Renae Clarke's Colour Catalogue V2](https://sarahrenaeclark.com/color-palettes/) for the website colour scheme.
 - [Google Fonts](https://fonts.google.com/) for the Raleway font.
 - [FontAwesome](https://fontawesome.com/) for logos.
+- [Microsoft Copilot](https://www.microsoft.com/en-us/microsoft-copilot?msockid=1799e49779a46988329af7bd7893685f) for drafting blog posts and other text.
+- [Map of Jurisdictions that Criminalise LGBT People](https://www.humandignitytrust.org/lgbt-the-law/map-of-criminalisation/) for map data.
 
 ## Credits
 
@@ -120,5 +122,5 @@ Blog post images sourced from [Deposit Photos](https://depositphotos.com/):
   - James (Rob) Cutmore.
   - Dominic Francis.
   - Anthony Griffiths.
-  - Oliver Sharp. 
+  - Oliver Sharp.
   - Henna Singh.
