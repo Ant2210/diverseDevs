@@ -28,6 +28,7 @@ def community_posts(request):
     forms = {post.id: PostForm(instance=post) for post in community_posts}
     return render(request, 'blog/community_posts.html', {'posts': community_posts, 'forms': forms})
 
+
 @login_required
 def create_post(request):
     if request.method == 'POST':
@@ -44,6 +45,7 @@ def create_post(request):
     return render(request, 'blog/create_post.html', {'form': form})
 
 
+@login_required
 def edit_post(request, post_id):
     post = get_object_or_404(Post, id=post_id)
     if request.user.userprofile != post.author and not request.user.is_superuser:
@@ -60,3 +62,17 @@ def edit_post(request, post_id):
         form = PostForm(instance=post)
 
     return render(request, 'blog/edit_post.html', {'form': form, 'post': post})
+
+@login_required
+def delete_post(request, post_id):
+    post = get_object_or_404(Post, id=post_id)
+    if request.user.userprofile != post.author and not request.user.is_superuser:
+        messages.error(request, 'You do not have permission to delete this post.')
+        return redirect('blog')
+
+    if request.method == 'POST':
+        post.delete()
+        messages.success(request, 'Post deleted successfully!')
+        return redirect('blog')
+
+    return render(request, 'blog/delete_post.html', {'post': post})
