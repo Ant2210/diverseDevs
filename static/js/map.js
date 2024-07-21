@@ -142,9 +142,28 @@ document.addEventListener("DOMContentLoaded", () => {
 		applyTransform();
 	});
 
-	function applyTransform() {
+	mapWrapper.addEventListener("wheel", (event) => {
+		hideTooltips();
+		event.preventDefault();
+		if (event.deltaY < 0) {
+			scale = Math.min(scale * 1.1, 20);
+		} else {
+			scale = Math.max(scale / 1.1, 0.1);
+			if (scale <= 0.9) {
+				scale = 1; // Reset to original size
+				posX = 0;
+				posY = 0;
+				lastPosX = 0;
+				lastPosY = 0;
+			}
+		}
+		lastScale = scale;
+		applyTransform();
+	});
+
+	const applyTransform = () => {
 		svg.style.transform = `translate(${posX}px, ${posY}px) scale(${scale})`;
-	}
+	};
 
 	const getRandomColor = () => {
 		return colors[Math.floor(Math.random() * colors.length)];
@@ -182,7 +201,6 @@ document.addEventListener("DOMContentLoaded", () => {
 	};
 
 	const handleCountryClick = () => {
-		hideTooltips();
 		paths.forEach((path) => {
 			const pathTitle = path.getAttribute("title");
 			path.addEventListener("click", (event) => {
@@ -217,6 +235,12 @@ document.addEventListener("DOMContentLoaded", () => {
 								).innerText = countryData
 									? countryData.maxPenalty
 									: "Data not available";
+
+								const tooltipInstance =
+									bootstrap.Tooltip.getInstance(path);
+								if (tooltipInstance) {
+									tooltipInstance.hide();
+								}
 
 								modal.show();
 							} catch (error) {

@@ -184,6 +184,8 @@ svg {
     height: 100%;
     cursor: grab;
     fill: gray;
+    stroke: #fff;
+    stroke-width: 0.5px;
 }
 
 #mapSVG path:hover {
