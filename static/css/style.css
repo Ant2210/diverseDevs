@@ -216,6 +216,13 @@ svg {
     border-color: #dee2e6 #dee2e6 #fff;
 }
 
+/* MODAL */
+.modal-text-highlight {
+    background-color: #c9c9c9;
+    padding: 15px 15px 1px 15px;
+    border-radius: 0.5rem;
+}
+
 /* Custom styles for the blog cards */
 .card-body img {
     max-width: 100%;
