@@ -165,7 +165,7 @@
     "countryID": "CD",
     "CountryName": "Congo",
     "criminalization": "Maintains discriminatory age of consent",
-    "maxPenalty": "Three years and a fine"
+    "maxPenalty": "Three years imprisonment, and a fine"
     },
     {
     "countryID": "CI",
@@ -231,7 +231,7 @@
     "countryID": "MG",
     "CountryName": "Madagascar",
     "criminalization": "Maintains discriminatory age of consent",
-    "maxPenalty": "Five years, and a fine"
+    "maxPenalty": "Five years imprisonment, and a fine"
     },
     {
     "countryID": "MW",
@@ -261,7 +261,7 @@
     "countryID": "NE",
     "CountryName": "Niger",
     "criminalization": "Maintains discriminatory age of consent",
-    "maxPenalty": "Three years, and a fine"
+    "maxPenalty": "Three years imprisonment, and a fine"
     },
     {
     "countryID": "NG",
@@ -369,7 +369,7 @@
     "countryID": "PY",
     "CountryName": "Paraguay",
     "criminalization": "Maintains discriminatory age of consent",
-    "maxPenalty": "Two years, and a fine"
+    "maxPenalty": "Two years imprisonment, and a fine"
     },
     {
     "countryID": "LC",
@@ -429,12 +429,12 @@
     "countryID": "VU",
     "CountryName": "Vanuatu",
     "criminalization": "Maintains discriminatory age of consent",
-    "maxPenalty": "Two years"
+    "maxPenalty": "Two years imprisonment"
     },
     {
     "countryID": "RU",
     "CountryName": "Russia",
-    "criminalization": "Same sex relationships discussion of pro-LGBTQIA+ issues illegal",
+    "criminalization": "Same sex relationships and discussion of pro-LGBTQIA+ issues are illegal",
     "maxPenalty": "Some regions impose the death penalty"
     }
     ]

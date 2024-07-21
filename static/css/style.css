@@ -42,7 +42,6 @@ main {
 /*footer */
 
 footer {
-    text-align: center;
     padding: 1em 0;
     font-size: 1.2rem;
 }
@@ -68,18 +67,6 @@ footer {
     font-size: 130%;
 }
 
-@media screen and (min-width:1200px) {
-
-    /* footer */
-    footer {
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-        }
-    }
-}
 
 
 /* NAVBAR */
