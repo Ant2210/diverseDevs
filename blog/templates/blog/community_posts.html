@@ -1,3 +1,4 @@
+{% load crispy_forms_tags %}
 {% for post in posts %}
 <div class="card mb-3 shadow-sm">
     <div class="card-body">
@@ -9,6 +10,45 @@
             <div class="col-md-8">
                 <p class="card-text">{{ post.content }}</p>
                 <small class="text-muted">{{ post.created_at }}</small>
+                {% if user.is_superuser or user.userprofile == post.author %}
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#editPostModal{{ post.id }}">
+                    Edit
+                </button>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Edit Post Modal -->
+<div class="modal fade" id="editPostModal{{ post.id }}" tabindex="-1" aria-labelledby="editPostModalLabel{{ post.id }}"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editPostModalLabel{{ post.id }}">Edit Post</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form method="post" enctype="multipart/form-data" action="{% url 'edit_post' post.id %}">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="id_title_{{ post.id }}" class="form-label">Title</label>
+                        <input type="text" class="form-control" id="id_title_{{ post.id }}" name="title"
+                            value="{{ post.title }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="id_image_{{ post.id }}" class="form-label">Image</label>
+                        <input type="file" class="form-control" id="id_image_{{ post.id }}" name="image">
+                    </div>
+                    <div class="mb-3">
+                        <label for="id_content_{{ post.id }}" class="form-label">Content</label>
+                        <textarea class="form-control" id="id_content_{{ post.id }}" name="content"
+                            rows="5">{{ post.content }}</textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </form>
             </div>
         </div>
     </div>

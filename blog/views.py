@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
@@ -16,13 +16,17 @@ def blog(request):
         context['form'] = PostForm()
     return render(request, 'blog/blog.html', context)
 
+
 def admin_posts(request):
     admin_posts = Post.objects.filter(post_type='admin')
-    return render(request, 'blog/admin_posts.html', {'posts': admin_posts})
+    forms = {post.id: PostForm(instance=post) for post in admin_posts}
+    return render(request, 'blog/admin_posts.html', {'posts': admin_posts, 'forms': forms})
+
 
 def community_posts(request):
     community_posts = Post.objects.filter(post_type='community')
-    return render(request, 'blog/community_posts.html', {'posts': community_posts})
+    forms = {post.id: PostForm(instance=post) for post in community_posts}
+    return render(request, 'blog/community_posts.html', {'posts': community_posts, 'forms': forms})
 
 @login_required
 def create_post(request):
@@ -38,3 +42,21 @@ def create_post(request):
     else:
         form = PostForm()
     return render(request, 'blog/create_post.html', {'form': form})
+
+
+def edit_post(request, post_id):
+    post = get_object_or_404(Post, id=post_id)
+    if request.user.userprofile != post.author and not request.user.is_superuser:
+        messages.error(request, 'You do not have permission to edit this post.')
+        return redirect('blog')
+
+    if request.method == 'POST':
+        form = PostForm(request.POST, request.FILES, instance=post)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Post updated successfully!')
+            return redirect('blog')
+    else:
+        form = PostForm(instance=post)
+
+    return render(request, 'blog/edit_post.html', {'form': form, 'post': post})
