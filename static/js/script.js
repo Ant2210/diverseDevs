@@ -35,7 +35,7 @@ function toggleContent(button) {
     var postId = button.getAttribute('data-post-id');
     var previewContent = document.getElementById('previewContent' + postId);
     var fullContent = document.getElementById('fullContent' + postId);
-    var card = previewContent.closest('.card');
+    var card = document.getElementById('card' + postId);
 
     if (fullContent.classList.contains('d-none')) {
         previewContent.classList.add('d-none');

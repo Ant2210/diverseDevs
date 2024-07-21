@@ -1,6 +1,6 @@
 {% load crispy_forms_tags %}
 {% for post in posts %}
-<div class="card mb-3 shadow-sm" style="max-height: 200px; overflow: hidden;">
+<div class="card mb-3 shadow-sm" id="card{{ post.id }}" style="max-height: 200px; overflow: hidden;">
     <div class="card-body">
         <div class="d-flex justify-content-between align-items-start">
             <h2 class="card-title">{{ post.title }}</h2>
@@ -29,11 +29,13 @@
                     <p class="card-text">{{ post.content }}</p>
                 </div>
                 <small class="text-muted">{{ post.created_at }}</small>
-                <button type="button" class="btn btn-link" onclick="toggleContent(this)"
-                    data-post-id="{{ post.id }}">Read More</button>
             </div>
         </div>
     </div>
+</div>
+<div class="read-more-container mb-3">
+    <button type="button" class="btn btn-link w-100" onclick="toggleContent(this)"
+        data-post-id="{{ post.id }}">Read More</button>
 </div>
 
 <!-- Edit Post Modal -->
