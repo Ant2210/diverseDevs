@@ -1,1 +1,37 @@
-<h1>This is the search page</h1>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<h1>Search Page</h1>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-8 mx-auto">
+      <form>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Search..." aria-label="Search bar"
+            aria-describedby="Search Bar">
+          <span class="input-group-text" id="basic-addon"><button type="button" class="btn btn-link"><i
+                class="fa-solid fa-magnifying-glass"></i></button></span>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid w-75">
+  <div id="poi-data" class="row">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+  <script>
+    const travelApiKey = "{{ TRAVEL_API_KEY }}";
+    const travelApiSecret = "{{ TRAVEL_API_SECRET }}";
+  </script>
+
+  <script src="{% static 'js/search.js' %}"></script>
+
+  {% endblock %}

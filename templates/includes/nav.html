@@ -14,10 +14,13 @@
                     <a class="nav-link hvr-underline-from-center" href="{% url 'index' %}">Home</a>
                 </div>
                 <div class="nav-item">
-                    <a class="nav-link hvr-underline-from-center" href="{% url 'about' %}">About</a>
+                    <a class="nav-link hvr-underline-from-center" href="{% url 'search' %}">Search</a>
                 </div>
                 <div class="nav-item">
                     <a class="nav-link hvr-underline-from-center" href="{% url 'blog' %}">Blog</a>
+                </div>
+                <div class="nav-item">
+                    <a class="nav-link hvr-underline-from-center" href="{% url 'about' %}">About</a>
                 </div>
                 {% if not user.is_authenticated %}
                 <div class="nav-item">
