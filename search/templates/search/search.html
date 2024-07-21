@@ -20,6 +20,13 @@
   </div>
 </div>
 
-<script src="{% static 'js/search.js' %}"></script>
+<div class="container-fluid w-75">
+  <div id="poi-data" class="row">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
 
-{% endblock %}
+  <script src="{% static 'js/search.js' %}"></script>
+
+  {% endblock %}
