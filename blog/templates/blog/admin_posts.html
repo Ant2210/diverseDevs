@@ -1,14 +1,119 @@
+{% load crispy_forms_tags %}
 {% for post in posts %}
-<div class="card mb-3 shadow-sm">
+<div class="card mb-3 shadow-sm" id="card{{ post.id }}" style="max-height: 200px; overflow: hidden;">
     <div class="card-body">
-        <h2 class="card-title">{{ post.title }}</h2>
+        <div class="d-flex justify-content-between align-items-start">
+            <h2 class="card-title">{{ post.title }}</h2>
+            <div>
+                {% if user.is_superuser %}
+                <button type="button" class="btn btn-link p-0" data-bs-toggle="modal"
+                    data-bs-target="#editPostModal{{ post.id }}">
+                    <i class="fas fa-edit"></i>
+                </button>
+                <button type="button" class="btn btn-link p-0" data-bs-toggle="modal"
+                    data-bs-target="#deletePostModal{{ post.id }}">
+                    <i class="fas fa-trash"></i>
+                </button>
+                {% endif %}
+            </div>
+        </div>
         <div class="row">
             <div class="col-md-4">
+                {% if post.image %}
                 <img src="{{ post.image.url }}" class="img-fluid" alt="{{ post.title }}">
+                {% endif %}
             </div>
             <div class="col-md-8">
-                <p class="card-text">{{ post.content }}</p>
+                <div class="preview-content" id="previewContent{{ post.id }}">
+                    {% if post.content1 %}
+                    <p class="card-text">{{ post.content1|truncatechars:200 }}</p>
+                    {% endif %}
+                </div>
+                <div class="full-content d-none" id="fullContent{{ post.id }}">
+                    {% if post.header1 %}
+                    <h3>{{ post.header1 }}</h3>
+                    {% endif %}
+                    {% if post.content1 %}
+                    <p class="card-text">{{ post.content1 }}</p>
+                    {% endif %}
+                    {% if post.header2 %}
+                    <h3>{{ post.header2 }}</h3>
+                    {% endif %}
+                    {% if post.content2 %}
+                    <p class="card-text">{{ post.content2 }}</p>
+                    {% endif %}
+                    {% if post.header3 %}
+                    <h3>{{ post.header3 }}</h3>
+                    {% endif %}
+                    {% if post.content3 %}
+                    <p class="card-text">{{ post.content3 }}</p>
+                    {% endif %}
+                    {% if post.header4 %}
+                    <h3>{{ post.header3 }}</h3>
+                    {% endif %}
+                    {% if post.content4 %}
+                    <p class="card-text">{{ post.content3 }}</p>
+                    {% endif %}
+                </div>
                 <small class="text-muted">{{ post.created_at }}</small>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="read-more-container mb-3">
+    <button type="button" class="btn btn-link w-100" onclick="toggleContent(this)"
+        data-post-id="{{ post.id }}">Read More</button>
+</div>
+
+<!-- Edit Post Modal -->
+<div class="modal fade" id="editPostModal{{ post.id }}" tabindex="-1" aria-labelledby="editPostModalLabel{{ post.id }}"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editPostModalLabel{{ post.id }}">Edit Post</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form method="post" enctype="multipart/form-data" action="{% url 'edit_post' post.id %}">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="id_title_{{ post.id }}" class="form-label">Title</label>
+                        <input type="text" class="form-control" id="id_title_{{ post.id }}" name="title"
+                            value="{{ post.title }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="id_image_{{ post.id }}" class="form-label">Image</label>
+                        <input type="file" class="form-control" id="id_image_{{ post.id }}" name="image">
+                    </div>
+                    <div class="mb-3">
+                        <label for="id_content_{{ post.id }}" class="form-label">Content</label>
+                        <textarea class="form-control" id="id_content_{{ post.id }}" name="content"
+                            rows="5">{{ post.content }}</textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Delete Post Modal -->
+<div class="modal fade" id="deletePostModal{{ post.id }}" tabindex="-1"
+    aria-labelledby="deletePostModalLabel{{ post.id }}" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deletePostModalLabel{{ post.id }}">Delete Post</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to delete this post?</p>
+                <form method="post" action="{% url 'delete_post' post.id %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                </form>
             </div>
         </div>
     </div>

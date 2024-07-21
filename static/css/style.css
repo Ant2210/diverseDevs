@@ -146,16 +146,6 @@ footer {
     border: 2px #e7e7e7 solid;
 }
 
-/*     BLOG PAGE STYLES     */
-
-.blog {
-    width: 75%;
-}
-
-.card-header {
-    text-align: right;
-}
-
 /* MAP */
 #map-wrapper {
     width: 95%;
@@ -221,7 +211,17 @@ svg {
     background-color: #c9c9c9;
     padding: 15px 15px 1px 15px;
     border-radius: 0.5rem;
+
 }
+
+/*     BLOG PAGE STYLES     */
+
+.blog {
+    width: 75%;
+}
+
+.card-header {
+    text-align: right;
 
 /* Custom styles for the blog cards */
 .card-body img {
@@ -233,6 +233,24 @@ svg {
 .author-text {
     font-size: 0.5em;
     color: #555;
+}
+
+.read-more-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0;
+    margin-top: -1rem;
+}
+
+.read-more-container button {
+    width: 100%;
+    text-align: center;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-top: none;
+    border-radius: 0 0 .25rem .25rem;
+    padding: .5rem;
 }
 
 @media (min-width: 768px) {

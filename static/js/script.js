@@ -29,3 +29,23 @@ $(document).ready(function() {
         }
     });
 });
+
+
+function toggleContent(button) {
+    var postId = button.getAttribute('data-post-id');
+    var previewContent = document.getElementById('previewContent' + postId);
+    var fullContent = document.getElementById('fullContent' + postId);
+    var card = document.getElementById('card' + postId);
+
+    if (fullContent.classList.contains('d-none')) {
+        previewContent.classList.add('d-none');
+        fullContent.classList.remove('d-none');
+        card.style.maxHeight = 'none';
+        button.textContent = 'Read Less';
+    } else {
+        previewContent.classList.remove('d-none');
+        fullContent.classList.add('d-none');
+        card.style.maxHeight = '200px';
+        button.textContent = 'Read More';
+    }
+}
