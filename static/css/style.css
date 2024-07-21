@@ -160,16 +160,6 @@ footer {
     border: 2px #e7e7e7 solid;
 }
 
-/*     BLOG PAGE STYLES     */
-
-.blog {
-    width: 75%;
-}
-
-.card-header {
-    text-align: right;
-}
-
 /* MAP */
 #map-wrapper {
     width: 95%;
@@ -228,6 +218,16 @@ svg {
     color: #495057;
     background-color: #fff;
     border-color: #dee2e6 #dee2e6 #fff;
+}
+
+/*     BLOG PAGE STYLES     */
+
+.blog {
+    width: 75%;
+}
+
+.card-header {
+    text-align: right;
 }
 
 /* Custom styles for the blog cards */
