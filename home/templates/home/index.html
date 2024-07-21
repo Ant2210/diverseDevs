@@ -2,7 +2,28 @@
 
 {% block content %}
 
-<div id="map-wrapper" class="container-fluid mt-5">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-10 mx-auto mt-5">
+            <h1 class="text-center mb-4">
+                <em>Safe and inclusive🌴 travel ✈️ for all!</em>
+            </h1>
+            <p class="text-center">
+                At Pride & Seek we are dedicated to helping the <span class="text-nowrap">🏳️‍🌈 LGBTQIA+ community
+                    🏳️‍⚧️</span>
+                discover safe holiday
+                destinations in countries that celebrate diversity.
+            </p>
+            <p class="text-center">
+                Our interactive map allows you to explore the world and find out more about the countries you are
+                interested
+                in visiting. You can also search for specific countries using the search link above
+            </p>
+        </div>
+    </div>
+</div>
+
+<div id="map-wrapper" class="container-fluid mt-5 mb-5">
     <svg xmlns:mapsvg="http://mapsvg.com" xmlns:dc="http://purl.org/dc/elements/1.1/"
         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg"
         xmlns="http://www.w3.org/2000/svg" mapsvg:geoViewBox="-169.110266 83.600842 190.486279 -58.508473" width="100%"
@@ -759,6 +780,7 @@
     <div class="zoom-controls">
         <button id="zoom-in" class="btn btn-primary btn-sm"><i class="fa-solid fa-plus"></i></button>
         <button id="zoom-out" class="btn btn-primary btn-sm"><i class="fa-solid fa-minus"></i></button>
+        <button id="recenter" class="btn btn-primary btn-sm"><i class="fa-solid fa-arrows-to-circle"></i></button>
     </div>
 </div>
 
@@ -766,29 +788,36 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title text-center" id="bannedModalLabel">...</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h4 class="modal-title mx-auto" id="bannedModalLabel">...</h4>
             </div>
-            <div class="modal-body" id="bannedModalBody">
+            <div class="modal-body px-4 pt-4" id="bannedModalBody">
                 <p>
-                    Unfortunately, we do not recommend travel to this country.😟 Local laws aren't as favorable to the
-                    LGBTQ+ community as we would like. 👎
-                </p>
-
-                <p>At the time of writing, <span id="modal-body-country-name">...</span> imposes the following laws:</p>
-
-                <p>
-                    <strong>Criminalisation</strong>: <span id="modal-criminalization">...</span><br>
-                    <strong>Maximum Pentalty</strong>: <span id="modal-max-penalty">...</span>
+                    Unfortunately, we <strong>do not</strong> recommend travel
+                    to this
+                    country.
                 </p>
 
                 <p>
-                    Click one of our more <span class="text-nowrap">🏳️‍🌈colourful🏳️‍🌈</span> countries for more
-                    <span class="text-nowrap">🎉exiting🎉</span> travel and event information.
+                    Local laws aren't as favorable to the LGBTQ+ community as we would like.
+                </p>
+
+                <div class="modal-text-highlight mb-3">
+                    <p>At the time of writing, the situation in <span id="modal-body-country-name">...</span> is as
+                        follows:
+                    </p>
+                    <ul>
+                        <li><strong>Prohibitions</strong>: <span id="modal-criminalization">...</span><br></li>
+                        <li><strong>Maximum Penalty</strong>: <span id="modal-max-penalty">...</span></li>
+                    </ul>
+                </div>
+
+                <p>
+                    Click one of our more <span class="text-nowrap">🏳️‍🌈 colourful 🏳️‍🌈</span> countries for more
+                    <span class="text-nowrap">🎉 exciting 🎉</span> travel and event information.
                 </p>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <div class="mb-3 text-center">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
             </div>
         </div>
     </div>

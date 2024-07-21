@@ -42,8 +42,6 @@ main {
 /*footer */
 
 footer {
-    text-align: center;
-    padding: 1em 0;
     font-size: 1.2rem;
 }
 
@@ -68,18 +66,6 @@ footer {
     font-size: 130%;
 }
 
-@media screen and (min-width:1200px) {
-
-    /* footer */
-    footer {
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-        }
-    }
-}
 
 
 /* NAVBAR */
@@ -220,6 +206,14 @@ svg {
     border-color: #dee2e6 #dee2e6 #fff;
 }
 
+/* MODAL */
+.modal-text-highlight {
+    background-color: #c9c9c9;
+    padding: 15px 15px 1px 15px;
+    border-radius: 0.5rem;
+
+}
+
 /*     BLOG PAGE STYLES     */
 
 .blog {
@@ -228,7 +222,6 @@ svg {
 
 .card-header {
     text-align: right;
-}
 
 /* Custom styles for the blog cards */
 .card-body img {
