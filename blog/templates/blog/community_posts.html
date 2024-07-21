@@ -125,13 +125,52 @@
                             value="{{ post.title }}">
                     </div>
                     <div class="mb-3">
-                        <label for="id_image_{{ post.id }}" class="form-label">Image</label>
-                        <input type="file" class="form-control" id="id_image_{{ post.id }}" name="image">
+                        <label for="id_image1_{{ post.id }}" class="form-label">Image 1</label>
+                        <input type="file" class="form-control" id="id_image1_{{ post.id }}" name="image1">
                     </div>
                     <div class="mb-3">
-                        <label for="id_content_{{ post.id }}" class="form-label">Content</label>
-                        <textarea class="form-control" id="id_content_{{ post.id }}" name="content"
-                            rows="5">{{ post.content }}</textarea>
+                        <label for="id_header1_{{ post.id }}" class="form-label">Header 1</label>
+                        <input type="text" class="form-control" id="id_header1_{{ post.id }}" name="header1"
+                            value="{{ post.header1 }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="id_content1_{{ post.id }}" class="form-label">Content 1</label>
+                        <textarea class="form-control" id="id_content1_{{ post.id }}" name="content1"
+                            rows="5">{{ post.content1 }}</textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="id_image2_{{ post.id }}" class="form-label">Image 2</label>
+                        <input type="file" class="form-control" id="id_image2_{{ post.id }}" name="image2">
+                    </div>
+                    <div class="mb-3">
+                        <label for="id_header2_{{ post.id }}" class="form-label">Header 2</label>
+                        <input type="text" class="form-control" id="id_header2_{{ post.id }}" name="header2"
+                            value="{{ post.header2 }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="id_content2_{{ post.id }}" class="form-label">Content 2</label>
+                        <textarea class="form-control" id="id_content2_{{ post.id }}" name="content2"
+                            rows="5">{{ post.content2 }}</textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="id_header3_{{ post.id }}" class="form-label">Header 3</label>
+                        <input type="text" class="form-control" id="id_header3_{{ post.id }}" name="header3"
+                            value="{{ post.header3 }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="id_content3_{{ post.id }}" class="form-label">Content 3</label>
+                        <textarea class="form-control" id="id_content3_{{ post.id }}" name="content3"
+                            rows="5">{{ post.content3 }}</textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="id_header4_{{ post.id }}" class="form-label">Header 4</label>
+                        <input type="text" class="form-control" id="id_header4_{{ post.id }}" name="header4"
+                            value="{{ post.header4 }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="id_content4_{{ post.id }}" class="form-label">Content 4</label>
+                        <textarea class="form-control" id="id_content4_{{ post.id }}" name="content4"
+                            rows="5">{{ post.content4 }}</textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Save changes</button>
                 </form>

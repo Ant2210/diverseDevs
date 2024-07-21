@@ -6,7 +6,7 @@ from .models import Post
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ['title', 'image1', 'header1', 'content1', 'image2', 'header2', 'content2', 'image3', 'header3', 'content3', 'image4', 'header4', 'content4']
+        fields = ['title', 'image1', 'header1', 'content1', 'image2', 'header2', 'content2', 'header3', 'content3', 'header4', 'content4']
 
     def __init__(self, *args, **kwargs):
         super(PostForm, self).__init__(*args, **kwargs)
