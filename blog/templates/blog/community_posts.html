@@ -1,6 +1,6 @@
 {% load crispy_forms_tags %}
 {% for post in posts %}
-<div class="card mb-3 shadow-sm">
+<div class="card mb-3 shadow-sm" style="max-height: 200px; overflow: hidden;">
     <div class="card-body">
         <h2 class="card-title">{{ post.title }}{% if post.author %} <span class="author-text">by {{ post.author.username}}</span>{% endif %}</h2>
         <div class="row">
@@ -8,15 +8,19 @@
                 <img src="{{ post.image.url }}" class="img-fluid" alt="{{ post.title }}">
             </div>
             <div class="col-md-8">
-                <p class="card-text">{{ post.content }}</p>
+                <div class="preview-content" id="previewContent{{ post.id }}">
+                    <p class="card-text">{{ post.content|truncatechars:200 }}</p>
+                </div>
+                <div class="full-content d-none" id="fullContent{{ post.id }}">
+                    <p class="card-text">{{ post.content }}</p>
+                </div>
                 <small class="text-muted">{{ post.created_at }}</small>
+                <button type="button" class="btn btn-link" onclick="toggleContent(this)" data-post-id="{{ post.id }}">Read More</button>
                 {% if user.is_superuser or user.userprofile == post.author %}
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                    data-bs-target="#editPostModal{{ post.id }}">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editPostModal{{ post.id }}">
                     Edit
                 </button>
-                <button type="button" class="btn btn-danger" data-bs-toggle="modal"
-                    data-bs-target="#deletePostModal{{ post.id }}">
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deletePostModal{{ post.id }}">
                     Delete
                 </button>
                 {% endif %}
@@ -24,7 +28,6 @@
         </div>
     </div>
 </div>
-
 <!-- Edit Post Modal -->
 <div class="modal fade" id="editPostModal{{ post.id }}" tabindex="-1" aria-labelledby="editPostModalLabel{{ post.id }}"
     aria-hidden="true">
