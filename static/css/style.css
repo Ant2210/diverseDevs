@@ -39,10 +39,15 @@ main {
     transform: scale(0.95);
 }
 
+.map-key {
+    font-size: 0.9rem;
+}
+
 /*footer */
 
 footer {
-    font-size: 1.2rem;
+    font-size: 0.8rem;
+    background: linear-gradient(to right, #ff0092, #9b2a78, #014ca7);
 }
 
 .container>div {
@@ -54,7 +59,7 @@ footer {
 }
 
 .pride-logo {
-    width: 100px;
+    width: 120px;
     padding: 0 0.4em;
 }
 
