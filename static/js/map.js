@@ -91,6 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	let isDragging = false;
 
 	hammer.on("panmove", (e) => {
+		hideTooltips();
 		isDragging = true;
 		posX = lastPosX + e.deltaX;
 		posY = lastPosY + e.deltaY;
@@ -106,6 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	});
 
 	hammer.on("pinchmove", (e) => {
+		hideTooltips();
 		isDragging = true;
 		scale = Math.max(1, Math.min(lastScale * e.scale, 20)); // Set zoom limits
 		applyTransform();
@@ -119,12 +121,14 @@ document.addEventListener("DOMContentLoaded", () => {
 	});
 
 	zoomInButton.addEventListener("click", () => {
+		hideTooltips();
 		scale = Math.min(scale * 1.2, 20);
 		lastScale = scale;
 		applyTransform();
 	});
 
 	zoomOutButton.addEventListener("click", () => {
+		hideTooltips();
 		scale = Math.max(scale / 1.2, 0.1);
 		if (scale <= 0.7) {
 			// Check if scale is 90% or less
@@ -164,7 +168,21 @@ document.addEventListener("DOMContentLoaded", () => {
 		});
 	};
 
+	const hideTooltips = () => {
+		const tooltipTriggerList = document.querySelectorAll(
+			'[data-bs-toggle="tooltip"]'
+		);
+		tooltipTriggerList.forEach((tooltipTriggerEl) => {
+			const tooltipInstance =
+				bootstrap.Tooltip.getInstance(tooltipTriggerEl);
+			if (tooltipInstance) {
+				tooltipInstance.hide();
+			}
+		});
+	};
+
 	const handleCountryClick = () => {
+		hideTooltips();
 		paths.forEach((path) => {
 			const pathTitle = path.getAttribute("title");
 			path.addEventListener("click", (event) => {
@@ -199,12 +217,6 @@ document.addEventListener("DOMContentLoaded", () => {
 								).innerText = countryData
 									? countryData.maxPenalty
 									: "Data not available";
-
-								const tooltipInstance =
-									bootstrap.Tooltip.getInstance(path);
-								if (tooltipInstance) {
-									tooltipInstance.hide();
-								}
 
 								modal.show();
 							} catch (error) {
