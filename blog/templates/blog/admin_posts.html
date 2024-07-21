@@ -10,7 +10,7 @@
             <div class="col-md-8">
                 <p class="card-text">{{ post.content }}</p>
                 <small class="text-muted">{{ post.created_at }}</small>
-                {% if user.is_superuser or user.userprofile == post.author %}
+                {% if user.is_superuser%}
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                     data-bs-target="#editPostModal{{ post.id }}">
                     Edit
