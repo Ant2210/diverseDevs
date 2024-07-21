@@ -82,6 +82,53 @@ document.addEventListener("DOMContentLoaded", () => {
 		"ZM",
 		"ZW",
 	]; // IDs of paths that should be gray
+	const countryList = [
+		"India",
+		"Spain",
+		"Germany",
+		"United Kingdom",
+		"United States",
+		"France",
+	];
+
+	const latsAndLongs = [
+		{
+			country: "India",
+			city: "Bangalore",
+			lat: 12.9716,
+			long: 77.5946,
+		},
+		{
+			country: "Spain",
+			city: "Barcelona",
+			lat: 41.3851,
+			long: 2.1734,
+		},
+		{
+			country: "Germany",
+			city: "Berlin",
+			lat: 52.52,
+			long: 13.405,
+		},
+		{
+			country: "United Kingdom",
+			city: "London",
+			lat: 51.5074,
+			long: -0.1278,
+		},
+		{
+			country: "United States",
+			city: "New York",
+			lat: 40.7128,
+			long: -74.006,
+		},
+		{
+			country: "France",
+			city: "Paris",
+			lat: 48.8566,
+			long: 2.3522,
+		},
+	];
 
 	const paths = document.querySelectorAll("#mapSVG path");
 	const mapWrapper = document.querySelector("#map-wrapper");
@@ -271,11 +318,15 @@ document.addEventListener("DOMContentLoaded", () => {
 							}
 						};
 						handleModal();
-					} else {
-						const pathUrl = `https://www.google.com/search?q=${encodeURIComponent(
-							pathTitle
-						)}`;
-						window.open(pathUrl, "_self");
+					} else if (countryList.includes(pathTitle)) {
+						// Add lat and long to local storage
+						const countryData = latsAndLongs.find(
+							(country) => country.country === pathTitle
+						);
+						localStorage.setItem("lat", countryData.lat);
+						localStorage.setItem("long", countryData.long);
+						localStorage.setItem("city", countryData.city);
+						window.location.href = "/search";
 					}
 				}
 			});
@@ -285,3 +336,8 @@ document.addEventListener("DOMContentLoaded", () => {
 	handleCountryClick();
 	assignRandomColors();
 });
+
+// const pathUrl = `https://www.google.com/search?q=${encodeURIComponent(
+// 	pathTitle
+// )}`;
+// window.open(pathUrl, "_self");

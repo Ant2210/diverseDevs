@@ -21,30 +21,40 @@ const generateAccessToken = async () => {
 
 		const data = await response.json();
 		console.log("Access Token:", data.access_token);
+		token = data.access_token;
 		return data.access_token;
 	} catch (error) {
 		console.error("Error fetching the access token:", error);
 	}
 };
 
-const startAtSpecificTime = (hour, minute, intervalMinutes, callback) => {
-	const now = new Date();
-	const start = new Date();
+const fetchPOI = async () => {
+	const baseUrl = "https://test.api.amadeus.com/v1";
+	const token = await generateAccessToken();
+	const lat = localStorage.getItem("lat");
+	const long = localStorage.getItem("long");
 
-	start.setHours(hour, minute, 0, 0);
+	try {
+		const pointsOfInterestRequest = await fetch(
+			`${baseUrl}/shopping/activities?latitude=${lat}&longitude=${long}&radius=1`,
+			{
+				headers: {Authorization: `Bearer ${token}`},
+			}
+		);
 
-	if (now > start) {
-		// If the time has already passed today, set it for tomorrow
-		start.setDate(start.getDate() + 1);
+		console.log(long, lat);
+
+		if (!pointsOfInterestRequest.ok) {
+			throw new Error(
+				`HTTP error! Status: ${pointsOfInterestRequest.status}`
+			);
+		}
+
+		const pointsOfInterestResponse = await pointsOfInterestRequest.json();
+		console.log(pointsOfInterestResponse.data);
+	} catch (error) {
+		console.log("Error fetching points of interest:", error);
 	}
-
-	const firstDelay = start - now;
-
-	setTimeout(() => {
-		callback(); // Execute the callback initially
-		setInterval(callback, intervalMinutes * 60 * 1000); // Set the interval for subsequent executions
-	}, firstDelay);
 };
 
-// Set to run at 18:40 today and then every 29 minutes
-startAtSpecificTime(18, 40, 29, generateAccessToken);
+fetchPOI();
