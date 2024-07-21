@@ -2,7 +2,21 @@
 {% for post in posts %}
 <div class="card mb-3 shadow-sm" style="max-height: 200px; overflow: hidden;">
     <div class="card-body">
-        <h2 class="card-title">{{ post.title }}</h2>
+        <div class="d-flex justify-content-between align-items-start">
+            <h2 class="card-title">{{ post.title }}</h2>
+            <div>
+                {% if user.is_superuser %}
+                <button type="button" class="btn btn-link p-0" data-bs-toggle="modal"
+                    data-bs-target="#editPostModal{{ post.id }}">
+                    <i class="fas fa-edit"></i>
+                </button>
+                <button type="button" class="btn btn-link p-0" data-bs-toggle="modal"
+                    data-bs-target="#deletePostModal{{ post.id }}">
+                    <i class="fas fa-trash"></i>
+                </button>
+                {% endif %}
+            </div>
+        </div>
         <div class="row">
             <div class="col-md-4">
                 <img src="{{ post.image.url }}" class="img-fluid" alt="{{ post.title }}">
@@ -15,15 +29,8 @@
                     <p class="card-text">{{ post.content }}</p>
                 </div>
                 <small class="text-muted">{{ post.created_at }}</small>
-                <button type="button" class="btn btn-link" onclick="toggleContent(this)" data-post-id="{{ post.id }}">Read More</button>
-                {% if user.is_superuser %}
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editPostModal{{ post.id }}">
-                    Edit
-                </button>
-                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deletePostModal{{ post.id }}">
-                    Delete
-                </button>
-                {% endif %}
+                <button type="button" class="btn btn-link" onclick="toggleContent(this)"
+                    data-post-id="{{ post.id }}">Read More</button>
             </div>
         </div>
     </div>
