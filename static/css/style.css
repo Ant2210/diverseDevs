@@ -84,7 +84,7 @@ footer {
 .nav-link {
     color: #ffffff;
     text-decoration: none;
-    font-size: 1.35rem;
+    font-size: 1.2rem;
     font-weight: 600;
     font-style: italic;
     transition: color 0.3s;
@@ -269,4 +269,10 @@ svg {
             flex-direction: column;
         }
     }
+}
+
+/* SEARCH PAGE */
+.search-label {
+    font-size: 14px;
+    margin-bottom: 0;
 }

@@ -1,1 +1,44 @@
-<h1>This is the search page</h1>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<h1>Search Page</h1>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-8 mx-auto">
+      <form>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Search..." aria-label="Search bar"
+            aria-describedby="Search Bar">
+          <span class="input-group-text" id="basic-addon"><i class="fa-solid fa-magnifying-glass"></i></span>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-4">
+            <label for="event-type" class="form-label search-label">Hotels, flights, events:</label>
+            <select class="form-select" name="event-type" id="event-type" aria-label="Select event">
+              <option selected>Choose search type</option>
+              <option value="1">Hotels</option>
+              <option value="2">Flights</option>
+              <option value="3">Events</option>
+            </select>
+          </div>
+          <div class="col-12 col-md-4">
+            <label for="date-from" class="form-label search-label">Date from:</label>
+            <input type="date" class="form-control" name="date-from" id="date-from">
+          </div>
+          <div class="col-12 col-md-4">
+            <label for="date-to" class="form-label search-label">Date to:</label>
+            <input type="date" class="form-control" name="date-to" id="date-to">
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary mt-3">Search</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="{% static 'js/search.js' %}"></script>
+
+{% endblock %}
