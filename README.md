@@ -2,7 +2,7 @@
 
 ![Pride & Seek banner](static/images/hackathon-banner-no-slogan.jpg)
 
-Add screenshot of live site here...
+![Website Homepage](static/images/siteScreenshot.png)
 
 ## Index
 
@@ -21,9 +21,8 @@ The purpose of this website is to provide an interactive way for members of the 
 
 ## Deployment
 
-#### _(please note, your team must also include the deployed links in the usual submission in Hackapp)_
 
-The project is deployed and can be accessed at [http://your-deployed-link.com](http://your-deployed-link.com).
+The project is deployed on Heroku. [Visit Pride&Seek](https://pride-and-seek-8a9b75dfd520.herokuapp.com/).
 
 ## User Stories
 
@@ -94,6 +93,8 @@ The goal section provides a concise summary of the main objective or purpose of 
 ## Tech Used
 
 - [HTML](https://en.wikipedia.org/wiki/HTML), [CSS](https://en.wikipedia.org/wiki/CSS), [JavaScript](https://en.wikipedia.org/wiki/JavaScript), and [Bootstrap.](<https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)>)
+- [Django](https://www.djangoproject.com/) for creating backend.
+- [Hammerjs](https://hammerjs.github.io/jsdoc/hammer.js.html) for touch gestures
 - [GitHub](https://github.com/) for version control.
 - [GitHub Pages](https://pages.github.com/) for hosting the website.
 - [Heroku](https://www.heroku.com/) for deployment via GitHub Pages.
