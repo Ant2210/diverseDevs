@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
+/* GLOBAL */
+
 body {
     display: flex;
     flex-direction: column;
@@ -309,4 +311,8 @@ svg {
     .card-body .row {
         flex-direction: column;
     }
+}
+
+.about-img {
+    box-shadow: -3px 3px 10px 5px rgba(0, 0, 0, 0.2);
 }
