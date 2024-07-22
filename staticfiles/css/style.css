@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* GLOBAL */
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: "Raleway", sans-serif;
+}
+
+main {
+    flex: 1;
+}
+
+/*     HOME PAGE STYLES     */
+.bg {
+    background-image: url('https://via.placeholder.com/1920x1080');
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+.btn-custom {
+    padding: 20px 40px;
+    font-size: 1.5rem;
+    margin: 10px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-custom:hover {
+    transform: scale(1.1);
+}
+
+.btn-custom:active {
+    transform: scale(0.95);
+}
+
+.map-key {
+    font-size: 0.9rem;
+}
+
+/*footer */
+
+footer {
+    font-size: 0.8rem;
+    background: linear-gradient(to right, #ff0092, #9b2a78, #014ca7);
+}
+
+.container>div {
+    padding: 1em 0;
+}
+
+.container a {
+    text-decoration: none;
+}
+
+.pride-logo {
+    width: 120px;
+    padding: 0 0.4em;
+}
+
+.container p {
+    letter-spacing: 1px;
+}
+
+.social-links i {
+    font-size: 130%;
+}
+
+
+
+/* NAVBAR */
+
+.navbar {
+    background: linear-gradient(to right, #01ab48, #fdd900, #ff6801, #ff0092, #9b2a78, #014ca7);
+    padding: 10px 20px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+}
+
+.nav-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-style: italic;
+    transition: color 0.3s;
+    display: inline-block;
+    display: -webkit-box;
+    margin: 0 1rem;
+}
+
+/*Hover styling for the Navbar -> https://ianlunn.github.io/Hover/ */
+.hvr-underline-from-center {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    overflow: hidden;
+}
+
+.hvr-underline-from-center:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 51%;
+    right: 51%;
+    bottom: 0;
+    background: #ffffff;
+    height: 3px;
+    -webkit-transition-property: left, right;
+    transition-property: left, right;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+
+.hvr-underline-from-center:hover:before,
+.hvr-underline-from-center:focus:before,
+.hvr-underline-from-center:active:before {
+    left: 0;
+    right: 0;
+}
+
+/* Text "glow" on hover - See bugs section for the reason this was used over bold text */
+.nav-link:hover {
+    text-shadow: 0px 0px 2.5px #ffff;
+    color: #fff;
+}
+
+#nav-logo {
+    width: 12rem;
+}
+
+.navbar-toggler-icon {
+    filter: invert(100);
+}
+
+.navbar-toggler {
+    border: 2px #e7e7e7 solid;
+    color: #e7e7e7;
+}
+
+.navbar-toggler:focus {
+    border: 2px #e7e7e7 solid;
+}
+
+/* MAP */
+#map-wrapper {
+    width: 95%;
+    max-height: 90%;
+
+    overflow: hidden;
+    position: relative;
+}
+
+svg {
+    width: 100%;
+    height: 100%;
+    cursor: grab;
+    fill: gray;
+    stroke: #fff;
+    stroke-width: 0.5px;
+}
+
+#mapSVG path:hover {
+    cursor: pointer;
+    filter: brightness(1.5);
+    stroke: #919191;
+    stroke-width: 1px;
+    transition: filter 0.4s, stroke 0.4s;
+}
+
+#mapSVG path {
+    outline: none;
+}
+
+.zoom-controls {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.zoom-controls button {
+    margin: 2px 0;
+}
+
+@media screen and (min-width:768px) {
+
+    #map-wrapper {
+        height: 600px;
+    }
+}
+
+.nav-tabs .nav-link {
+    color: #007bff;
+    cursor: pointer;
+}
+
+.nav-tabs .nav-link.active {
+    color: #495057;
+    background-color: #fff;
+    border-color: #dee2e6 #dee2e6 #fff;
+}
+
+/* MODAL */
+.modal-text-highlight {
+    background-color: #c9c9c9;
+    padding: 15px 15px 1px 15px;
+    border-radius: 0.5rem;
+
+}
+
+/*     BLOG PAGE STYLES     */
+
+.blog {
+    width: 75%;
+}
+
+.card-header {
+    text-align: right;
+}
+
+/* Custom styles for the blog cards */
+.card-body img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.author-text {
+    font-size: 0.5em;
+    color: #555;
+}
+
+.read-more-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0;
+    margin-top: -1rem;
+}
+
+.read-more-container button {
+    width: 100%;
+    text-align: center;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-top: none;
+    border-radius: 0 0 .25rem .25rem;
+    padding: .5rem;
+}
+
+@media (min-width: 768px) {
+    .card-body img {
+        max-height: 300px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .card-body .row {
+        flex-direction: column;
+    }
+}
+
+/* SEARCH PAGE */
+.search-label {
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+.read-more-container button {
+    width: 100%;
+    text-align: center;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-top: none;
+    border-radius: 0 0 .25rem .25rem;
+    padding: .5rem;
+}
+
+.card-img-container {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.card-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (min-width: 768px) {
+    .card-body img {
+        max-height: 300px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .card-body .row {
+        flex-direction: column;
+    }
+}
+
+.about-img {
+    box-shadow: -3px 3px 10px 5px rgba(0, 0, 0, 0.2);
+}
