@@ -327,6 +327,15 @@ document.addEventListener("DOMContentLoaded", () => {
 						localStorage.setItem("long", countryData.long);
 						localStorage.setItem("city", countryData.city);
 						window.location.href = "/search";
+					} else {
+						// Show modal
+						const modal = new bootstrap.Modal(
+							document.getElementById("comingSoonModal")
+						);
+						document.getElementById(
+							"comingSoonModalLabel"
+						).innerText = pathTitle;
+						modal.show();
 					}
 				}
 			});
