@@ -2,7 +2,7 @@
 
 ![Pride & Seek banner](static/images/hackathon-banner-no-slogan.jpg)
 
-![Website Homepage](static/images/siteScreenshot.png.png)
+![Website Homepage](static/images/siteScreenshot.png)
 
 ## Index
 
