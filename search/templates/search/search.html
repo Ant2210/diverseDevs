@@ -3,35 +3,48 @@
 
 {% block content %}
 
-<h1>Search Page</h1>
+<h1 class="my-5 text-center">Fascinating Finds</h1>
 
-<div class="container-fluid">
+<div class="container-fluid w-75">
   <div class="row">
-    <div class="col-8 mx-auto">
-      <form>
+    <div class="col p-0">
+      <form id="search-form">
         <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Search..." aria-label="Search bar"
+          <input type="text" class="form-control" id="search-input" placeholder="Search..." aria-label="Search bar"
             aria-describedby="Search Bar">
-          <span class="input-group-text" id="basic-addon"><button type="button" class="btn btn-link"><i
+          <span class="input-group-text" id="basic-addon"><button type="submit" class="btn btn-link"><i
                 class="fa-solid fa-magnifying-glass"></i></button></span>
         </div>
       </form>
+      <div>
+        <p id="search-results" class="text-muted"></p>
+      </div>
     </div>
   </div>
 </div>
 
 <div class="container-fluid w-75">
-  <div id="poi-data" class="row">
+  <div id="poi-data" class="row justify-content-around text-center"></div>
+  <div id="loader" class="d-flex justify-content-center my-3">
     <div class="spinner-border text-primary" role="status">
       <span class="visually-hidden">Loading...</span>
     </div>
   </div>
+</div>
 
-  <script>
-    const travelApiKey = "{{ TRAVEL_API_KEY }}";
-    const travelApiSecret = "{{ TRAVEL_API_SECRET }}";
-  </script>
+<div id="map-animation" class="container-fluid mt-5 d-none">
+  <dotlottie-player src="https://lottie.host/6fc8ef8e-440b-4865-8ff6-f927dc873862/JiwscqLnrI.json"
+    background="transparent" speed="1" class="mx-auto" style="width: 300px; height: 300px;" loop
+    autoplay></dotlottie-player>
+</div>
 
-  <script src="{% static 'js/search.js' %}"></script>
+<script>
+  const travelApiKey = "{{ TRAVEL_API_KEY }}";
+  const travelApiSecret = "{{ TRAVEL_API_SECRET }}";
+  const noImage = "{% static 'images/noimage.jpg' %}";
+</script>
 
-  {% endblock %}
+<script src="{% static 'js/search.js' %}"></script>
+<script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+
+{% endblock %}
