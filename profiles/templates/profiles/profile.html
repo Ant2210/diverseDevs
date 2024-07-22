@@ -5,47 +5,49 @@
 
 {% block content %}
 
-<div class="container mt-5">
-    <h1 class="text-center">Profile</h1>
+<div class="container mt-5 mb-5 px-5">
+    <h1 class="text-center mb-5 fw-bold">Profile</h1>
     <div class="card shadow-sm">
         <div class="card-body text-center">
-            <div class="mb-3">
-                <h3>Username: {{ form.username.value }}</h3>
+            <div class="mt-4 mb-5">
+                <p class="fs-2 fw-medium text-break mx-2">{{ user.first_name }} {{ user.last_name }} 🏳‍🌈 ({{ form.username.value }})</p>
             </div>
-            <div class="mb-3">
-                <h3>First Name: {{ user.first_name }}</h3>
-            </div>
-            <div class="mb-3">
-                <h3>Last Name: {{ user.last_name }}</h3>
-            </div>
-            <div class="mb-3">
-                <h3>Email: {{ user.email }}</h3>
-            </div>
-            <div class="mb-3">
-                <h3>Profile Image:</h3>
+            <div class="mb-4">
+                <!-- <h3>Profile Image</h3> -->
                 {% if form.profile_image.value %}
                 <img src="{{ form.profile_image.value.url }}" alt="Profile Image" class="img-thumbnail rounded-circle"
-                    style="width: 150px; height: 150px; object-fit: cover;">
+                    style="width: 220px; height: 220px; object-fit: cover;">
                 {% else %}
                 <p>No image uploaded.</p>
                 {% endif %}
             </div>
-            <div class="mb-3">
-                <h3>Gender: {{ form.gender.value }}</h3>
-            </div>
-            {% if form.custom_gender.value %}
-                <div class="mb-3">
-                    <h3>Custom Gender: {{ form.custom_gender.value }}</h3>
+            <div class="p-0 mx-5">
+                <div class="d-flex flex-row flex-wrap justify-content-center mb-4">
+                    <div class="mx-3">
+                        <p class="fs-5 text-break">📧 {{ user.email }}</p>
+                    </div>
+                    <div>
+                        <p class="fs-5 text-break">🆔 {{ form.gender.value }}</p>
+                    </div>
+                    {% if form.custom_gender.value %}
+                        <div class="">
+                            <p class="fs-5 text-break">❔ {{ form.custom_gender.value }}</p>
+                        </div>
+                    {% endif %}
+                </div>            
+                <div class="d-flex flex-row justify-content-center mb-4">
+                    <div>
+                        <button type="button" class="btn btn-outline-primary me-4" data-bs-toggle="modal"
+                            data-bs-target="#editProfileModal">
+                            Edit Profile
+                        </button>
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteProfileModal">
+                            Delete Profile
+                        </button>
+                    </div>
                 </div>
-            {% endif %}
-            <div class="mt-3">
-                <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
-                    data-bs-target="#editProfileModal">
-                    Edit Profile
-                </button>
-                <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteProfileModal">
-                    Delete Profile
-                </button>
             </div>
         </div>
     </div>
@@ -81,7 +83,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <p>Are you sure you want to delete your profile? This action cannot be undone.</p>
+                <p>Are you sure you want to delete your profile?</p><p>This action cannot be undone.</p>
             </div>
             <div class="modal-footer">
                 <form method="post" action="{% url 'delete_profile' %}">
