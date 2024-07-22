@@ -22,7 +22,9 @@ The purpose of this website is to provide an interactive way for members of the 
 ## Deployment
 
 
-The project is deployed on Heroku. [Visit Pride&Seek](https://pride-and-seek-8a9b75dfd520.herokuapp.com/).
+The project is deployed on Heroku - visit [Pride & Seek](https://pride-and-seek-8a9b75dfd520.herokuapp.com/).
+
+While clicking on a selection of friendly countries will result in a modal pop-up that allows you to search for interesting excursions at that destination, we were unable to apply this to all friendly countries due to restrictions of the available API. This is also why the search results do not currently feature the ability to book accommodation. 
 
 ## User Stories
 
@@ -109,11 +111,26 @@ The goal section provides a concise summary of the main objective or purpose of 
 
 ## Credits
 
-Blog post images sourced from [Deposit Photos](https://depositphotos.com/):
+Blog post images sourced from [Deposit Photos](https://depositphotos.com/), [Accent Francais](https://www.accentfrancais.com/), [Rove](https://rove.me/), and [Unsplash](https://www.unsplash.com):
+
+### Deposit Photos
 
 - [Rainbow World Map](https://depositphotos.com/vector/map-silhouette-of-the-continents-of-earth-painted-in-colors-of-the-rainbow-lgbt-flag-203681954.html) taken by koksikoks.
 - [Copenhagen Illustrative Skyline](https://depositphotos.com/vector/copenhagen-skyline-with-color-landmarks-and-blue-sky-157290390.html) taken by booblgum.
 - [Beach Hammock](https://depositphotos.com/photo/beach-hammock-2531939.html) taken by endhals.
+
+### Accent Francais
+
+- [Mardi Gras Masks](https://www.accentfrancais.com/blog/festivals-and-french-tradition-mardi-gras-in-france).
+
+### Rove.me
+
+- [Carnival Image](https://rove.me/to/france/mardi-gras-carnaval).
+
+### Unsplash
+
+- [Eyeglasses on a map](https://unsplash.com/photos/eyeglasses-on-map-qoAIlAmLJBU).
+- [Pride balloons](https://unsplash.com/photos/people-standing-on-road-while-watching-traditional-dance-at-daytimew-UdGgq3ML-Ak).
 
 ## Acknowledgements
 
