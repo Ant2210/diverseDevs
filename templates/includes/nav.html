@@ -33,15 +33,15 @@
                 </div>
                 {% else %}
                 <div class="nav-item">
+                    <a class="nav-link hvr-underline-from-center" aria-current="page"
+                        href="{% url 'account_logout' %}">Logout</a>
+                </div>
+                <div class="nav-item">
                     <a class="nav-link d-lg-none" href="{% url 'profile' %}">Profile</a>
                     <!-- This will be visible on screens smaller than lg -->
                     <a class="nav-link d-none d-lg-block" href="{% url 'profile' %}"><i
                             class="fa-solid fa-user"></i></a>
                     <!-- This will be visible on screens larger than lg -->
-                </div>
-                <div class="nav-item">
-                    <a class="nav-link hvr-underline-from-center" aria-current="page"
-                        href="{% url 'account_logout' %}">Logout</a>
                 </div>
                 {% endif %}
             </div>

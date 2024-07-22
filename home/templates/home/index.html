@@ -794,7 +794,7 @@
     </div>
 </div>
 
-<div class=" modal fade" id="bannedModal" tabindex="-1" aria-labelledby="bannedModalLabel" aria-hidden="true">
+<div class="modal fade" id="bannedModal" tabindex="-1" aria-labelledby="bannedModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -824,6 +824,45 @@
                 <p>
                     Click one of our more <span class="text-nowrap">🏳️‍🌈 colourful 🏳️‍🌈</span> countries for more
                     <span class="text-nowrap">🎉 exciting 🎉</span> travel and event information.
+                </p>
+            </div>
+            <div class="mb-3 text-center">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="comingSoonModal" tabindex="-1" aria-labelledby="comingSoonModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title mx-auto" id="comingSoonModalLabel">...</h4>
+            </div>
+            <div class="modal-body px-4 pt-4" id="comingSoonModalBody">
+                <p>
+                    Oops! Unfortunately we're still working some stuff out and not all countries are supported yet 😟.
+                </p>
+
+                <p>
+                    Information is available on all grey countries. And our points of interest search is currently
+                    available in the following countries:
+                <ul>
+                    <li>France 🇫🇷</li>
+                    <li>Germany 🇩🇪</li>
+                    <li>India 🇮🇳</li>
+                    <li>Spain 🇪🇸</li>
+                    <li>United Kingdom 🇬🇧</li>
+                    <li>United States 🇺🇸</li>
+                </ul>
+                </p>
+                <p>
+                    But watch this space! 👀 Or... <a href="{% url 'account_signup' %}">Sign up!</a>📝 and we will let
+                    you
+                    now
+                    when we
+                    add more of your favourite
+                    destinations. ✈️
                 </p>
             </div>
             <div class="mb-3 text-center">

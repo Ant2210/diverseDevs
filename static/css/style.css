@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
+/* GLOBAL */
+
 body {
     display: flex;
     flex-direction: column;
@@ -287,6 +289,18 @@ svg {
     padding: .5rem;
 }
 
+.card-img-container {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.card-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 @media (min-width: 768px) {
     .card-body img {
         max-height: 300px;
@@ -297,4 +311,8 @@ svg {
     .card-body .row {
         flex-direction: column;
     }
+}
+
+.about-img {
+    box-shadow: -3px 3px 10px 5px rgba(0, 0, 0, 0.2);
 }
