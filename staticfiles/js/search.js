@@ -20,7 +20,6 @@ const generateAccessToken = async () => {
 		}
 
 		const data = await response.json();
-		console.log("Access Token:", data.access_token);
 		token = data.access_token;
 		return data.access_token;
 	} catch (error) {
@@ -60,8 +59,6 @@ const fetchPOI = async () => {
 			}
 		);
 
-		console.log(long, lat);
-
 		if (!pointsOfInterestRequest.ok) {
 			throw new Error(
 				`HTTP error! Status: ${pointsOfInterestRequest.status}`
@@ -70,7 +67,6 @@ const fetchPOI = async () => {
 
 		const pointsOfInterestResponse = await pointsOfInterestRequest.json();
 		const poiData = pointsOfInterestResponse.data.slice(0, 25);
-		console.log(poiData);
 
 		if (poiData.length === 0) {
 			document.getElementById("poi-data").innerHTML =
@@ -178,7 +174,6 @@ searchForm.addEventListener("submit", (e) => {
 	);
 
 	if (selectedLocation) {
-		console.log(selectedLocation);
 		localStorage.setItem("lat", selectedLocation.lat);
 		localStorage.setItem("long", selectedLocation.long);
 		localStorage.setItem("city", selectedLocation.city);
